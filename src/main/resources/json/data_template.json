@@ -1,0 +1,18 @@
+{
+    "persons": [
+       { "firstName":"fn1", "lastName":"ln1", "address":"addr1", "city":"city1", "zip":"zip1", "phone":"ph1", "email":"em1" },
+       { "firstName":"fn2", "lastName":"ln2", "address":"addr2", "city":"city2", "zip":"zip2", "phone":"ph2", "email":"em2" },
+       ...
+      ],
+    "firestations": [
+	{ "address":"addr1", "station":"3" },
+        { "address":"addr2", "station":"4" },
+       ...
+      ],
+    "medicalrecords": [
+        { "firstName":"fn1", "lastName":"fn1", "birthdate":"bd1", "medications":["m11", "m12"], "allergies":["a11"] },
+        { "firstName":"fn2", "lastName":"fn2", "birthdate":"bd2", "medications":["m21", "m22"], "allergies":["a21"] },
+        ...
+      ]
+}
+
