@@ -1,0 +1,392 @@
+2021-03-08 13:49:16,557 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 21513 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 13:49:16,560 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 13:49:18,382 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 2.504 seconds (JVM running for 5.023)
+2021-03-08 13:49:19,112 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 21513 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 13:49:19,113 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 13:49:19,616 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 0.555 seconds (JVM running for 6.257)
+2021-03-08 13:49:19,917 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 13:49:19,940 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 13:49:20,038 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 13:49:20,073 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 13:49:20,113 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 13:49:20,136 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 13:49:20,174 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 13:49:20,199 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 13:49:20,221 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 13:49:20,247 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 13:49:20,262 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 13:49:20,311 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 13:49:20,331 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 13:49:20,346 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 13:49:20,365 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 13:49:20,371 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 13:49:20,397 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Trump, lastname Benett
+2021-03-08 13:49:20,402 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 13:49:20,419 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:Trump prénom:Benett] successfully deleted
+2021-03-08 13:49:20,491 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 21513 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 13:49:20,491 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 13:49:21,058 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.602 seconds (JVM running for 7.7)
+2021-03-08 13:49:21,115 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 13:49:21,119 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 13:49:21,133 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 13:49:21,146 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-03-08 13:49:21,198 INFO org.springframework.boot.StartupInfoLogger [main] Starting MedicalRecordControllerTest using Java 11.0.10 on hero with PID 21513 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 13:49:21,198 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 13:49:21,560 INFO org.springframework.boot.StartupInfoLogger [main] Started MedicalRecordControllerTest in 0.392 seconds (JVM running for 8.201)
+2021-03-08 13:49:21,573 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 13:49:21,574 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Fri Feb 25 00:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 13:49:21,585 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 13:49:21,602 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Durand, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 13:49:21,644 INFO org.springframework.boot.StartupInfoLogger [main] Starting PersonControllerTest using Java 11.0.10 on hero with PID 21513 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 13:49:21,645 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 13:49:21,968 INFO org.springframework.boot.StartupInfoLogger [main] Started PersonControllerTest in 0.348 seconds (JVM running for 8.609)
+2021-03-08 13:49:21,974 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 13:49:21,985 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 13:49:21,986 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 13:49:21,995 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Franklin, firstName=LORD, address=43 Bruyère, city=Albatros, zip=8484848, phone=0203003, email=flord@test.com]
+2021-03-08 13:49:22,004 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 13:49:22,022 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 13:49:22,035 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Dupont, lastname Aline
+2021-03-08 13:49:22,276 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-03-08 13:49:22,277 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-03-08 13:49:22,279 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 13:49:22,280 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-03-08 13:49:22,290 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 13:49:22,292 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updating  person nom: 'Bill' prénom: 'Gink
+2021-03-08 13:49:22,293 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updated  to: MedicalRecord [firstName=Bill, lastName=Gink, birthdate=null, medications=null, allergies=null]
+2021-03-08 14:22:19,191 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 23148 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:22:19,196 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:22:21,360 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 3.193 seconds (JVM running for 5.387)
+2021-03-08 14:22:21,899 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 23148 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:22:21,900 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:22:22,413 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 0.554 seconds (JVM running for 6.44)
+2021-03-08 14:22:22,711 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 14:22:22,736 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 14:22:22,807 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 14:22:22,834 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 14:22:22,864 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 14:22:22,887 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 14:22:22,928 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:22:22,950 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:22:22,968 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:22:22,988 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:22:22,999 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 14:22:23,038 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 14:22:23,054 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 14:22:23,064 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 14:22:23,080 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 14:22:23,085 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 14:22:23,114 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Trump, lastname Benett
+2021-03-08 14:22:23,120 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 14:22:23,137 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:Trump prénom:Benett] successfully deleted
+2021-03-08 14:22:23,203 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 23148 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:22:23,203 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:22:23,679 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.506 seconds (JVM running for 7.705)
+2021-03-08 14:22:23,736 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 14:22:23,740 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 14:22:23,753 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 14:22:23,765 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-03-08 14:22:23,808 INFO org.springframework.boot.StartupInfoLogger [main] Starting MedicalRecordControllerTest using Java 11.0.10 on hero with PID 23148 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:22:23,808 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:22:24,187 INFO org.springframework.boot.StartupInfoLogger [main] Started MedicalRecordControllerTest in 0.403 seconds (JVM running for 8.214)
+2021-03-08 14:22:24,201 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:22:24,202 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Fri Feb 25 00:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:22:24,210 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 14:22:24,227 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Durand, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:22:24,274 INFO org.springframework.boot.StartupInfoLogger [main] Starting PersonControllerTest using Java 11.0.10 on hero with PID 23148 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:22:24,274 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:22:24,588 INFO org.springframework.boot.StartupInfoLogger [main] Started PersonControllerTest in 0.34 seconds (JVM running for 8.615)
+2021-03-08 14:22:24,595 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 14:22:24,606 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 14:22:24,607 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 14:22:24,616 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Franklin, firstName=LORD, address=43 Bruyère, city=Albatros, zip=8484848, phone=0203003, email=flord@test.com]
+2021-03-08 14:22:24,626 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 14:22:24,641 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 14:22:24,654 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Dupont, lastname Aline
+2021-03-08 14:22:24,871 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-03-08 14:22:24,871 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-03-08 14:22:24,875 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 14:22:24,875 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-03-08 14:22:24,890 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 14:22:24,893 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updating  person nom: 'Bill' prénom: 'Gink
+2021-03-08 14:22:24,894 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updated  to: MedicalRecord [firstName=Bill, lastName=Gink, birthdate=null, medications=null, allergies=null]
+2021-03-08 14:30:37,256 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 23933 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:30:37,259 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:30:39,710 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 3.392 seconds (JVM running for 5.983)
+2021-03-08 14:30:40,705 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 23933 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:30:40,706 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:30:41,503 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 0.899 seconds (JVM running for 7.776)
+2021-03-08 14:30:41,926 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 14:30:41,965 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 14:30:42,114 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 14:30:42,152 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 14:30:42,197 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 14:30:42,227 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 14:30:42,278 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:30:42,309 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:30:42,331 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:30:42,367 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:30:42,386 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 14:30:42,439 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 14:30:42,458 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 14:30:42,476 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 14:30:42,499 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 14:30:42,507 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 14:30:42,538 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Trump, lastname Benett
+2021-03-08 14:30:42,544 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 14:30:42,572 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:Trump prénom:Benett] successfully deleted
+2021-03-08 14:30:42,657 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 23933 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:30:42,657 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:30:43,305 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.684 seconds (JVM running for 9.578)
+2021-03-08 14:30:43,368 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 14:30:43,373 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 14:30:43,387 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 14:30:43,398 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-03-08 14:30:43,454 INFO org.springframework.boot.StartupInfoLogger [main] Starting MedicalRecordControllerTest using Java 11.0.10 on hero with PID 23933 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:30:43,454 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:30:43,944 INFO org.springframework.boot.StartupInfoLogger [main] Started MedicalRecordControllerTest in 0.522 seconds (JVM running for 10.217)
+2021-03-08 14:30:43,959 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:30:43,959 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Fri Feb 25 00:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:30:43,972 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 14:30:43,994 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Durand, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:30:44,069 INFO org.springframework.boot.StartupInfoLogger [main] Starting PersonControllerTest using Java 11.0.10 on hero with PID 23933 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:30:44,070 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:30:44,544 INFO org.springframework.boot.StartupInfoLogger [main] Started PersonControllerTest in 0.518 seconds (JVM running for 10.817)
+2021-03-08 14:30:44,557 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 14:30:44,575 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 14:30:44,576 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 14:30:44,591 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Franklin, firstName=LORD, address=43 Bruyère, city=Albatros, zip=8484848, phone=0203003, email=flord@test.com]
+2021-03-08 14:30:44,605 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 14:30:44,626 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 14:30:44,642 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Dupont, lastname Aline
+2021-03-08 14:30:44,978 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-03-08 14:30:44,978 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-03-08 14:30:44,981 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 14:30:44,982 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-03-08 14:30:44,994 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 14:30:44,996 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updating  person nom: 'Bill' prénom: 'Gink
+2021-03-08 14:30:44,997 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updated  to: MedicalRecord [firstName=Bill, lastName=Gink, birthdate=null, medications=null, allergies=null]
+2021-03-08 14:31:29,959 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 24064 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:31:29,963 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:31:32,914 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 3.866 seconds (JVM running for 7.112)
+2021-03-08 14:31:33,978 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 24064 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:31:33,978 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:31:34,675 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 0.789 seconds (JVM running for 8.873)
+2021-03-08 14:31:35,142 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 14:31:35,189 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 14:31:35,378 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 14:31:35,427 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 14:31:35,482 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 14:31:35,524 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 14:31:35,582 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:31:35,616 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:31:35,648 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:31:35,697 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:31:35,717 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 14:31:35,798 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 14:31:35,828 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 14:31:35,847 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 14:31:35,873 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 14:31:35,883 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 14:31:35,924 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Trump, lastname Benett
+2021-03-08 14:31:35,932 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 14:31:35,960 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:Trump prénom:Benett] successfully deleted
+2021-03-08 14:31:36,075 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 24064 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:31:36,075 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:31:36,984 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.957 seconds (JVM running for 11.182)
+2021-03-08 14:31:37,074 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 14:31:37,082 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 14:31:37,101 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 14:31:37,118 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-03-08 14:31:37,190 INFO org.springframework.boot.StartupInfoLogger [main] Starting MedicalRecordControllerTest using Java 11.0.10 on hero with PID 24064 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:31:37,191 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:31:37,793 INFO org.springframework.boot.StartupInfoLogger [main] Started MedicalRecordControllerTest in 0.648 seconds (JVM running for 11.991)
+2021-03-08 14:31:37,807 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:31:37,808 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Fri Feb 25 00:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:31:37,818 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 14:31:37,841 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Durand, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:31:37,891 INFO org.springframework.boot.StartupInfoLogger [main] Starting PersonControllerTest using Java 11.0.10 on hero with PID 24064 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:31:37,891 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:31:38,328 INFO org.springframework.boot.StartupInfoLogger [main] Started PersonControllerTest in 0.466 seconds (JVM running for 12.526)
+2021-03-08 14:31:38,339 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 14:31:38,353 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 14:31:38,355 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 14:31:38,366 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Franklin, firstName=LORD, address=43 Bruyère, city=Albatros, zip=8484848, phone=0203003, email=flord@test.com]
+2021-03-08 14:31:38,381 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 14:31:38,404 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 14:31:38,423 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Dupont, lastname Aline
+2021-03-08 14:31:38,788 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-03-08 14:31:38,789 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-03-08 14:31:38,793 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 14:31:38,794 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-03-08 14:31:38,809 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 14:31:38,813 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updating  person nom: 'Bill' prénom: 'Gink
+2021-03-08 14:31:38,814 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updated  to: MedicalRecord [firstName=Bill, lastName=Gink, birthdate=null, medications=null, allergies=null]
+2021-03-08 14:33:34,269 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 24264 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:33:34,273 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:33:37,034 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 3.653 seconds (JVM running for 6.943)
+2021-03-08 14:33:37,916 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 24264 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:33:37,917 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:33:38,720 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 0.869 seconds (JVM running for 8.629)
+2021-03-08 14:33:39,165 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 14:33:39,214 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 14:33:39,349 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 14:33:39,380 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 14:33:39,417 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 14:33:39,443 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 14:33:39,494 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:33:39,529 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:33:39,558 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:33:39,589 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:33:39,603 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 14:33:39,660 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 14:33:39,684 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 14:33:39,702 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 14:33:39,730 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 14:33:39,736 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 14:33:39,771 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Trump, lastname Benett
+2021-03-08 14:33:39,779 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 14:33:39,803 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:Trump prénom:Benett] successfully deleted
+2021-03-08 14:33:39,896 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 24264 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:33:39,896 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:33:40,662 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.806 seconds (JVM running for 10.571)
+2021-03-08 14:33:40,722 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 14:33:40,728 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 14:33:40,741 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 14:33:40,752 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-03-08 14:33:40,819 INFO org.springframework.boot.StartupInfoLogger [main] Starting MedicalRecordControllerTest using Java 11.0.10 on hero with PID 24264 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:33:40,819 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:33:41,412 INFO org.springframework.boot.StartupInfoLogger [main] Started MedicalRecordControllerTest in 0.632 seconds (JVM running for 11.321)
+2021-03-08 14:33:41,428 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:33:41,428 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Fri Feb 25 00:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:33:41,442 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 14:33:41,472 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Durand, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:33:41,547 INFO org.springframework.boot.StartupInfoLogger [main] Starting PersonControllerTest using Java 11.0.10 on hero with PID 24264 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:33:41,548 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:33:42,021 INFO org.springframework.boot.StartupInfoLogger [main] Started PersonControllerTest in 0.518 seconds (JVM running for 11.93)
+2021-03-08 14:33:42,033 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 14:33:42,049 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 14:33:42,050 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 14:33:42,064 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Franklin, firstName=LORD, address=43 Bruyère, city=Albatros, zip=8484848, phone=0203003, email=flord@test.com]
+2021-03-08 14:33:42,077 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 14:33:42,101 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 14:33:42,119 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Dupont, lastname Aline
+2021-03-08 14:33:42,430 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-03-08 14:33:42,430 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-03-08 14:33:42,433 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 14:33:42,433 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-03-08 14:33:42,448 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 14:33:42,451 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updating  person nom: 'Bill' prénom: 'Gink
+2021-03-08 14:33:42,452 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updated  to: MedicalRecord [firstName=Bill, lastName=Gink, birthdate=null, medications=null, allergies=null]
+2021-03-08 14:56:58,242 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 25957 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:56:58,246 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:57:01,361 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 4.134 seconds (JVM running for 7.359)
+2021-03-08 14:57:02,374 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 25957 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:57:02,375 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:57:03,235 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 0.948 seconds (JVM running for 9.232)
+2021-03-08 14:57:03,696 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 14:57:03,741 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 14:57:03,883 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 14:57:03,920 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 14:57:03,970 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 14:57:04,005 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 14:57:04,062 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:57:04,095 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:57:04,124 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:57:04,155 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:57:04,170 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 14:57:04,237 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 14:57:04,262 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 14:57:04,286 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 14:57:04,311 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 14:57:04,319 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 14:57:04,356 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Trump, lastname Benett
+2021-03-08 14:57:04,363 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 14:57:04,389 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:Trump prénom:Benett] successfully deleted
+2021-03-08 14:57:04,505 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 25957 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:57:04,506 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:57:05,403 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.957 seconds (JVM running for 11.4)
+2021-03-08 14:57:05,474 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 14:57:05,480 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 14:57:05,497 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 14:57:05,512 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-03-08 14:57:05,585 INFO org.springframework.boot.StartupInfoLogger [main] Starting MedicalRecordControllerTest using Java 11.0.10 on hero with PID 25957 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:57:05,586 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:57:06,166 INFO org.springframework.boot.StartupInfoLogger [main] Started MedicalRecordControllerTest in 0.63 seconds (JVM running for 12.163)
+2021-03-08 14:57:06,182 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:57:06,183 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Fri Feb 25 00:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 14:57:06,200 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 14:57:06,226 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Durand, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 14:57:06,338 INFO org.springframework.boot.StartupInfoLogger [main] Starting PersonControllerTest using Java 11.0.10 on hero with PID 25957 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 14:57:06,338 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 14:57:07,033 INFO org.springframework.boot.StartupInfoLogger [main] Started PersonControllerTest in 0.73 seconds (JVM running for 13.03)
+2021-03-08 14:57:07,047 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 14:57:07,068 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 14:57:07,069 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 14:57:07,085 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Franklin, firstName=LORD, address=43 Bruyère, city=Albatros, zip=8484848, phone=0203003, email=flord@test.com]
+2021-03-08 14:57:07,100 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 14:57:07,126 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 14:57:07,151 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Dupont, lastname Aline
+2021-03-08 14:57:07,594 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-03-08 14:57:07,594 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-03-08 14:57:07,599 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 14:57:07,600 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-03-08 14:57:07,614 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 14:57:07,618 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updating  person nom: 'Bill' prénom: 'Gink
+2021-03-08 14:57:07,619 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updated  to: MedicalRecord [firstName=Bill, lastName=Gink, birthdate=null, medications=null, allergies=null]
+2021-03-08 15:51:34,598 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 7588 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 15:51:34,607 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 15:51:38,008 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 4.609 seconds (JVM running for 7.668)
+2021-03-08 15:51:39,120 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 7588 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 15:51:39,121 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 15:51:39,882 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 0.817 seconds (JVM running for 9.542)
+2021-03-08 15:51:40,402 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 15:51:40,452 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-03-08 15:51:40,627 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 15:51:40,670 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 15:51:40,717 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-03-08 15:51:40,774 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 15:51:40,831 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 15:51:40,889 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 15:51:40,917 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 15:51:40,958 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 15:51:40,975 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 15:51:41,033 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 15:51:41,053 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Parakou, zip=000000, phone=00495929949, email=btrump@trump.world]
+2021-03-08 15:51:41,074 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 15:51:41,107 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 15:51:41,114 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Benett, firstName=Trump, address=null, city=Cotonou, zip=000000, phone=093939292, email=btrump@trump.world]
+2021-03-08 15:51:41,155 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Trump, lastname Benett
+2021-03-08 15:51:41,162 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 15:51:41,191 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:Trump prénom:Benett] successfully deleted
+2021-03-08 15:51:41,318 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 7588 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 15:51:41,319 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 15:51:42,103 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.839 seconds (JVM running for 11.763)
+2021-03-08 15:51:42,178 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 15:51:42,184 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-03-08 15:51:42,204 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-03-08 15:51:42,218 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-03-08 15:51:42,272 INFO org.springframework.boot.StartupInfoLogger [main] Starting MedicalRecordControllerTest using Java 11.0.10 on hero with PID 7588 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 15:51:42,272 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 15:51:42,820 INFO org.springframework.boot.StartupInfoLogger [main] Started MedicalRecordControllerTest in 0.581 seconds (JVM running for 12.48)
+2021-03-08 15:51:42,838 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 15:51:42,839 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Fri Feb 25 00:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-03-08 15:51:42,852 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-03-08 15:51:42,875 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Durand, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-03-08 15:51:42,932 INFO org.springframework.boot.StartupInfoLogger [main] Starting PersonControllerTest using Java 11.0.10 on hero with PID 7588 (started by kiki in /home/kiki/eclipse-workspace/alerts)
+2021-03-08 15:51:42,933 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-03-08 15:51:43,389 INFO org.springframework.boot.StartupInfoLogger [main] Started PersonControllerTest in 0.485 seconds (JVM running for 13.05)
+2021-03-08 15:51:43,400 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-03-08 15:51:43,417 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 15:51:43,418 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-03-08 15:51:43,434 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Franklin, firstName=LORD, address=43 Bruyère, city=Albatros, zip=8484848, phone=0203003, email=flord@test.com]
+2021-03-08 15:51:43,448 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 15:51:43,475 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-03-08 15:51:43,492 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Dupont, lastname Aline
+2021-03-08 15:51:43,852 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-03-08 15:51:43,853 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-03-08 15:51:43,857 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-03-08 15:51:43,858 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-03-08 15:51:43,871 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-03-08 15:51:43,874 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updating  person nom: 'Bill' prénom: 'Gink
+2021-03-08 15:51:43,875 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updated  to: MedicalRecord [firstName=Bill, lastName=Gink, birthdate=null, medications=null, allergies=null]

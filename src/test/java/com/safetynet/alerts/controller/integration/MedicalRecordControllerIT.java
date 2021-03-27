@@ -12,7 +12,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,6 +29,7 @@ import com.safetynet.alerts.model.MedicalRecord;
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@TestMethodOrder(OrderAnnotation.class)
 public class MedicalRecordControllerIT extends AbstractITControllerTest {
 
 	@Autowired
@@ -35,6 +39,7 @@ public class MedicalRecordControllerIT extends AbstractITControllerTest {
 	private MedicalRecordController medicalRecordController;
 
 	@Test
+	@Order(1)
 	public void testGetMedicalrecords() throws Exception {
 
 		mockMvc.perform(get("/medicalRecords").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
@@ -42,17 +47,18 @@ public class MedicalRecordControllerIT extends AbstractITControllerTest {
 	}
 
 	@Test
+	@Order(2)
 	public void testCreateMedicalRecord() throws Exception {
 		MedicalRecord mr = new MedicalRecord();
 		mr.setFirstName("Aline");
 		mr.setLastName("Dupont");
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 		mr.setBirthdate(sdf.parse("25-02-2000"));
-		List<String> allergies = new ArrayList<String>();
+		List<String> allergies = new ArrayList<>();
 		allergies.add("spatonine");
 		allergies.add("alacol");
 		mr.setAllergies(allergies);
-		List<String> medications = new ArrayList<String>();
+		List<String> medications = new ArrayList<>();
 		medications.add("beotim:200mg");
 		medications.add("flavoquine:400mg");
 		mr.setMedications(medications);
@@ -66,17 +72,18 @@ public class MedicalRecordControllerIT extends AbstractITControllerTest {
 	}
 
 	@Test
+	@Order(3)
 	public void testUpdateMedicalRecord() throws Exception {
 		MedicalRecord mr = new MedicalRecord();
 		mr.setFirstName("Aline");
 		mr.setLastName("Dupont");
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 		mr.setBirthdate(sdf.parse("15-02-2001"));
-		List<String> allergies = new ArrayList<String>();
+		List<String> allergies = new ArrayList<>();
 		allergies.add("spatomine");
 		allergies.add("beoziol");
 		mr.setAllergies(allergies);
-		List<String> medications = new ArrayList<String>();
+		List<String> medications = new ArrayList<>();
 		medications.add("quinine:200mg");
 		medications.add("chloroquine:400mg");
 		mr.setMedications(medications);
@@ -86,6 +93,7 @@ public class MedicalRecordControllerIT extends AbstractITControllerTest {
 	}
 
 	@Test
+	@Order(4)
 	public void testDeletePerson() throws Exception {
 		MedicalRecord mr = new MedicalRecord();
 		mr.setFirstName("Aline");

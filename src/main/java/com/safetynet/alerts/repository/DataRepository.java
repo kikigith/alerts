@@ -314,4 +314,25 @@ public class DataRepository {
 		serializeDataToFile(objectMapper, aData);
 
 	}
+
+	public List<String> getPhonePersonsAtAddress(String address) throws JsonMappingException {
+		List<String> personsPhone = new ArrayList<String>();
+		for (Person person : jsonDataReader().getPersons()) {
+			if (person.getAddress().equalsIgnoreCase(address)) {
+				personsPhone.add(person.getPhone());
+			}
+		}
+		return personsPhone;
+	}
+
+	public List<Person> getPersonsAtAddress(String address) throws JsonMappingException {
+		List<Person> personsPhone = new ArrayList<Person>();
+		for (Person person : jsonDataReader().getPersons()) {
+			if (person.getAddress().equalsIgnoreCase(address)) {
+				personsPhone.add(person);
+			}
+		}
+		return personsPhone;
+	}
+
 }

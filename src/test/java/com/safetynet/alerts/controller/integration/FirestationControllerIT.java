@@ -77,6 +77,6 @@ public class FirestationControllerIT extends AbstractITControllerTest {
 	@Test
 	public void testDeleteFirestation() throws Exception {
 
-		mockMvc.perform(delete("/firestation?stationId=10")).andExpect(status().isOk());
+		mockMvc.perform(delete("/firestation?stationId=10")).andExpect(status().isAccepted());
 	}
 }

@@ -53,7 +53,7 @@ public class MedicalRecordController {
 			e.printStackTrace();
 		}
 		logger.info("Response = @ResponseBody = {}", persistedMedicalRecord.toString());
-		return ResponseEntity.created(URI.create(String.format("/firestation"))).body(persistedMedicalRecord);
+		return ResponseEntity.created(URI.create(String.format("/medicalRecord"))).body(persistedMedicalRecord);
 
 	}
 
@@ -94,16 +94,6 @@ public class MedicalRecordController {
 			throws JsonParseException, JsonMappingException, IOException {
 		medicalRecordService.deleteMedicalRecord(lastname, firstname);
 		return new ResponseEntity<MedicalRecord>(HttpStatus.ACCEPTED);
-	}
-
-	/**
-	 * http://localhost:8080/personInfo?firstName=<firstName>&lastName=<lastName>
-	 * 
-	 * @return List<MedicalRecord>
-	 */
-	@GetMapping("/personInfo")
-	public List<MedicalRecord> getPersonInfo() {
-		return null;
 	}
 
 	/**

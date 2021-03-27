@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -30,6 +31,7 @@ public class PersonControllerIT extends AbstractITControllerTest {
 	private PersonController personController;
 
 	@Test
+	@Order(1)
 	public void testGetPersons() throws Exception {
 
 		mockMvc.perform(get("/persons").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
@@ -37,6 +39,7 @@ public class PersonControllerIT extends AbstractITControllerTest {
 	}
 
 	@Test
+	@Order(2)
 	public void testCreatePerson() throws Exception {
 		Person pers = new Person();
 		pers.setLastName("Benett");
@@ -55,6 +58,7 @@ public class PersonControllerIT extends AbstractITControllerTest {
 	}
 
 	@Test
+	@Order(3)
 	public void testUpdatePerson() throws Exception {
 		Person pers = new Person();
 		pers.setLastName("Benett");
@@ -63,17 +67,20 @@ public class PersonControllerIT extends AbstractITControllerTest {
 		pers.setCity("Cotonou");
 		pers.setPhone("093939292");
 		pers.setZip("000000");
-		mockMvc.perform(put("/person?firstname=Trump&lastname=Benett").content(asJsonString(pers))
+		mockMvc.perform(put("/person?lastname=Benett&firstname=Trump").content(asJsonString(pers))
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
 				.andDo(print()).andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("Trump"))
 				.andExpect(MockMvcResultMatchers.jsonPath("$.city").value("Cotonou"));
 	}
 
 	@Test
+	@Order(4)
 	public void testDeletePerson() throws Exception {
 		Person pers = new Person();
 		pers.setLastName("Benett");
 		pers.setFirstName("Trump");
-		mockMvc.perform(delete("/person?firstname=Trump&lastname=Benett")).andExpect(status().isAccepted());
+		mockMvc.perform(delete("/person?lastname=Benett&firstname=Trump").content(asJsonString(pers))
+				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isAccepted());
 	}
 }

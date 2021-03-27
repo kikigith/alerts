@@ -1,6 +1,5 @@
 package com.safetynet.alerts.controller;
 
-import java.io.IOException;
 import java.net.URI;
 import java.util.List;
 
@@ -19,7 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.safetynet.alerts.exception.InvalidPersonException;
+import com.safetynet.alerts.exception.PersonIntrouvableException;
 import com.safetynet.alerts.model.Person;
+import com.safetynet.alerts.model.dto.PersonInfoDTO;
 import com.safetynet.alerts.service.PersonService;
 
 @RestController
@@ -51,7 +53,7 @@ public class PersonController {
 			@RequestParam("lastname") final String lastname, @RequestBody Person person) {
 
 		logger.info("Request = @RequestBody = {}", person.toString());
-		Person persistedPerson = null;
+		Person persistedPerson = new Person();
 		try {
 			persistedPerson = personService.savePerson(person);
 
@@ -85,11 +87,16 @@ public class PersonController {
 	 * @return - an instance of ResponseEntity<Person>
 	 */
 	@PutMapping("/person")
-	public ResponseEntity<Person> updatePerson(@RequestParam("firstname") final String firstname,
-			@RequestParam("lastname") final String lastname, @RequestBody Person person) {
+	public ResponseEntity<Person> updatePerson(@RequestParam("lastname") final String lastname,
+			@RequestParam("firstname") final String firstname, @RequestBody Person person) {
 		logger.info("Request = @RequestBody = {}", person.toString());
+		ResponseEntity<Person> response = null;
 		try {
-			Person pers = personService.findPerson(firstname, lastname);
+			Person pers = personService.findPerson(lastname, firstname);
+//			if (pers == null) {
+//				response = new ResponseEntity<Person>(HttpStatus.NOT_FOUND);
+//				throw new PersonIntrouvableException();
+//			}
 			String fname = person.getFirstName();
 			if (fname != null) {
 				pers.setFirstName(fname);
@@ -120,7 +127,7 @@ public class PersonController {
 			}
 			logger.info("Response = @ResponseBody = {}", pers.toString());
 			personService.savePerson(pers);
-			return ResponseEntity.ok().body(pers);
+			response = ResponseEntity.ok().body(pers);
 //					.created(URI.create(String.format("/person?firstname=" + firstname + "&lastname=" + lastname)))
 //					.body(pers);
 		} catch (Exception e) {
@@ -129,6 +136,7 @@ public class PersonController {
 			return null;
 
 		}
+		return response;
 
 	}
 
@@ -143,10 +151,42 @@ public class PersonController {
 	@DeleteMapping("/person")
 	public ResponseEntity<Person> deletePerson(@RequestParam("lastname") final String lastname,
 			@RequestParam("firstname") final String firstname)
-			throws JsonParseException, JsonMappingException, IOException {
+			throws JsonParseException, JsonMappingException, Exception {
+		ResponseEntity<Person> response = null;
 		logger.info("Request Delete person firstname {}, lastname {}", firstname, lastname);
+		if (lastname.isEmpty() || firstname.isEmpty()) {
+			response = new ResponseEntity<Person>(HttpStatus.BAD_REQUEST);
+			throw new InvalidPersonException("Les champs nom/prénoms ne peuvent être vides");
+		}
+		if (personService.findPerson(lastname, firstname) == null) {
+			response = new ResponseEntity<Person>(HttpStatus.NOT_FOUND);
+			throw new PersonIntrouvableException(
+					"la personne nom:" + lastname + " prénom:" + firstname + " est introuvable");
+
+		}
+
 		personService.deletePerson(lastname, firstname);
-		return new ResponseEntity<Person>(HttpStatus.ACCEPTED);
+		response = new ResponseEntity<Person>(HttpStatus.ACCEPTED);
+
+		return response;
+	}
+
+	/**
+	 * getPersonInfos() - display person infos : firstname, lastname, age, email,
+	 * allergies and medication
+	 * 
+	 * http://localhost:8080/personInfo?firstName=<firstName>&lastName=<lastName>
+	 * 
+	 * @return List<MedicalRecord>
+	 * @throws Exception
+	 */
+	@GetMapping("/personInfo")
+	public ResponseEntity<List<PersonInfoDTO>> getPersonInfo(@RequestParam("lastname") String lastname,
+			@RequestParam("firstname") String firstname) throws Exception {
+
+		logger.info("Request Delete person firstname {}, lastname {}", firstname, lastname);
+		List<PersonInfoDTO> searchResult = personService.getPersonInfos(lastname, firstname);
+		return new ResponseEntity<List<PersonInfoDTO>>(searchResult, HttpStatus.OK);
 	}
 
 }

@@ -1,10 +1,14 @@
 package com.safetynet.alerts.controller.unit;
 
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doReturn;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.text.SimpleDateFormat;
@@ -38,6 +42,7 @@ public class MedicalRecordControllerTest extends AbstractControllerTest {
 
 	@Test
 	public void testCreateMedicalRecord() throws Exception {
+		// Arrange
 		MedicalRecord mr = new MedicalRecord();
 		mr.setFirstName("Aline");
 		mr.setLastName("Dupont");
@@ -53,10 +58,14 @@ public class MedicalRecordControllerTest extends AbstractControllerTest {
 		mr.setMedications(medications);
 
 		String medicalRecordJson = mapToJson(mr);
+
+		doReturn(mr).when(medicalRecordService).saveMedicalRecord(any());
+
+		// Act and Assert
 		int status = mockMvc
 				.perform(
 						post("/medicalRecord").contentType(MediaType.APPLICATION_JSON_VALUE).content(medicalRecordJson))
-				.andReturn().getResponse().getStatus();
+				.andExpect(jsonPath("$.firstName", is(mr.getFirstName()))).andReturn().getResponse().getStatus();
 		assertEquals(201, status);
 	}
 
@@ -91,12 +100,7 @@ public class MedicalRecordControllerTest extends AbstractControllerTest {
 	}
 
 	@Test
-	public void testListPersonInfos() {
-
-	}
-
-	@Test
-	public void testDisplayChildAlert() {
+	public void testDisplayChildAlert() throws Exception {
 
 	}
 
