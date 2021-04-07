@@ -4,17 +4,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
-public class InvalidMedicalRecordException extends RuntimeException {
+public class MedicalRecordInvalidException extends RuntimeException {
 
-	public InvalidMedicalRecordException() {
+	public MedicalRecordInvalidException() {
 		super();
 	}
 
-	public InvalidMedicalRecordException(String message) {
+	public MedicalRecordInvalidException(String message) {
 		super(message);
 	}
 
-	public InvalidMedicalRecordException(String message, Throwable cause) {
+	public MedicalRecordInvalidException(String message, Throwable cause) {
 		super(message, cause);
 	}
 }

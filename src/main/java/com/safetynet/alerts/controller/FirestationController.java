@@ -3,8 +3,10 @@ package com.safetynet.alerts.controller;
 import java.io.IOException;
 import java.net.URI;
 import java.util.List;
-import java.util.Map;
 
+import com.safetynet.alerts.exception.FirestationNotFoundException;
+import com.safetynet.alerts.model.dto.ChildrenCoveredDTO;
+import com.safetynet.alerts.model.dto.PersonsCoveredByStation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.safetynet.alerts.model.Firestation;
-import com.safetynet.alerts.model.dto.PersonInfoDTO;
 import com.safetynet.alerts.service.FirestationService;
 
 @RestController
@@ -78,7 +79,10 @@ public class FirestationController {
 			logger.info("Response = @ResponseBody = {}", frs.toString());
 			return ResponseEntity.ok().body(frs);
 
-		} catch (Exception e) {
+		}catch(FirestationNotFoundException fne){
+			return null;
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
@@ -95,15 +99,17 @@ public class FirestationController {
 	 * 
 	 * http://localhost:8080/phoneAlert?firestation=<firestation_number>
 	 * 
-	 * @return List<Person>
+	 * @return List<String>
 	 * @throws JsonMappingException
 	 */
 	@GetMapping("/phoneAlert")
-	public ResponseEntity<Map<String, List<String>>> getPhoneAlert(@RequestParam("firestation") Integer station_number)
+	public ResponseEntity< List<String>> getPhoneAlert(@RequestParam("firestation") Integer station_number)
 			throws JsonMappingException {
+		logger.info("Request: retrieve phone number for residents covered by station {} ", station_number);
+		List<String> residents = firestationService.getResidentPhone(station_number);
 
-		Map<String, List<String>> residents = firestationService.getResidentPhone(station_number);
-		return new ResponseEntity<Map<String, List<String>>>(residents, HttpStatus.OK);
+		logger.info("Response: phone number for residents covered by station {} : {}", station_number, residents);
+		return new ResponseEntity<List<String>>(residents, HttpStatus.OK);
 	}
 
 	/**
@@ -111,11 +117,47 @@ public class FirestationController {
 	 * http://localhost:8080/firestation?stationNumber=<station_number>
 	 */
 	@GetMapping("/firestation")
-	public ResponseEntity<List<PersonInfoDTO>> getPersonDeserved(@RequestParam("stationNumber") Integer stationNumber)
+	public ResponseEntity<PersonsCoveredByStation> getPersonDeserved(@RequestParam("stationNumber") Integer stationNumber)
 			throws JsonMappingException {
+		logger.info("Request: retrieve Persons covered by station {}", stationNumber);
+		PersonsCoveredByStation personsDeserved = firestationService.getPersonsCoveredByStation(stationNumber);
 
-		List<PersonInfoDTO> personsDeserved = firestationService.getPersonsCoveredByStation(stationNumber);
-		return new ResponseEntity<List<PersonInfoDTO>>(personsDeserved, HttpStatus.OK);
+		logger.info("Response : persons covered by station {}: {}", stationNumber,personsDeserved.toString());
+		return new ResponseEntity<PersonsCoveredByStation>(personsDeserved, HttpStatus.OK);
 	}
 
+	/**
+	 *
+	 * @param address
+	 * @return
+	 * @throws JsonMappingException
+	 *  http://localhost:8080/childAlert?address=<address>
+	 */
+	@GetMapping("/childAlert")
+	public ResponseEntity<ChildrenCoveredDTO> getChildrenCoveredByStation(@RequestParam("address") String address)
+			throws JsonMappingException {
+		logger.info("Request: retrieve children covered at address {}", address);
+		ChildrenCoveredDTO childrenDeserved = firestationService.getChildrenCovered(address);
+
+		logger.info("Response : persons covered at address {} : {}",address, childrenDeserved);
+		return new ResponseEntity<ChildrenCoveredDTO>(childrenDeserved, HttpStatus.OK);
+	}
+
+
+	/**
+	 *
+	 * @param address
+	 * @return
+	 * @throws JsonMappingException
+	 *
+	 * http://localhost:8080/fire?address=<address>
+	 */
+	@GetMapping("/fire")
+	public ResponseEntity<PersonsCoveredByStation> getPersonsCoveredAtAddress(@RequestParam("address") String address) throws JsonMappingException{
+
+		logger.info("Request: retrieve persons covered at address: {}", address);
+		PersonsCoveredByStation personsCovered = firestationService.getStationAndPersonsCoveredAtAddress(address);
+		logger.info("Response : persons covered at address: {}", personsCovered);
+		return new ResponseEntity<PersonsCoveredByStation>(personsCovered, HttpStatus.OK);
+	}
 }

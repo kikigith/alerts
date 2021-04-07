@@ -3,6 +3,7 @@ package com.safetynet.alerts.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.safetynet.alerts.exception.CityNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,8 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.safetynet.alerts.exception.InvalidPersonException;
-import com.safetynet.alerts.exception.PersonIntrouvableException;
+import com.safetynet.alerts.exception.PersonInvalidException;
+import com.safetynet.alerts.exception.PersonNotFoundException;
 import com.safetynet.alerts.model.MedicalRecord;
 import com.safetynet.alerts.model.Person;
 import com.safetynet.alerts.model.dto.PersonInfoDTO;
@@ -37,7 +38,7 @@ public class PersonService {
 	public Person findPerson(String lastName, String firstName) throws Exception {
 		List<Person> foundPersons = dataRepository.findPersonByLastNameAndFirstName(lastName, firstName);
 		if (foundPersons.size() == 0) {
-			throw new PersonIntrouvableException(
+			throw new PersonNotFoundException(
 					"La person nom:'" + firstName + "' Prénom:'" + lastName + ", n'existe pas");
 		}
 		return foundPersons.get(0);
@@ -45,7 +46,7 @@ public class PersonService {
 
 	public Person savePerson(Person pers) throws Exception {
 		if (pers.getFirstName().isEmpty() || pers.getLastName().isEmpty()) {
-			throw new InvalidPersonException("Le champ nom/prénom ne peut être vide");
+			throw new PersonInvalidException("Le champ nom/prénom ne peut être vide");
 		}
 		return dataRepository.savePerson(pers);
 	}
@@ -96,6 +97,11 @@ public class PersonService {
 		return medicalRecordService.convertMedicalRecordsToPersonInfos(mrs);
 	}
 
+	/**
+	 * findPersonByAddress - Retrieve a list of persons living at a given address
+	 * @param address
+	 * @return
+	 */
 	public List<Person> findPersonByAddress(String address) {
 		List<Person> personsAtAddress = new ArrayList<>();
 		dataRepository.findAllPerson().forEach(pers -> {
@@ -104,6 +110,27 @@ public class PersonService {
 			}
 		});
 		return personsAtAddress;
+	}
+
+	/**
+	 * getCommunityEmail - Returns a list of city inhabitant email addresses
+	 *
+	 * @param city
+	 * @return
+	 */
+	public List<String> getCommunityEmail(String city) {
+		List<String> cityInhabitantsEmails=new ArrayList<>();
+
+		dataRepository.findAllPerson().forEach(pers -> {
+			if (pers.getCity().equalsIgnoreCase(city)) {
+				cityInhabitantsEmails.add(pers.getEmail());
+			}
+		});
+		if(cityInhabitantsEmails.size()==0){
+			throw new CityNotFoundException("La ville "+city +" est introuvable");
+		}
+
+		return cityInhabitantsEmails;
 	}
 
 }

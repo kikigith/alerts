@@ -4,17 +4,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
-public class InvalidPersonException extends RuntimeException {
+public class PersonInvalidException extends RuntimeException {
 
-	public InvalidPersonException() {
+	public PersonInvalidException() {
 		super();
 	}
 
-	public InvalidPersonException(String message) {
+	public PersonInvalidException(String message) {
 		super(message);
 	}
 
-	public InvalidPersonException(String message, Throwable cause) {
+	public PersonInvalidException(String message, Throwable cause) {
 		super(message, cause);
 	}
 }

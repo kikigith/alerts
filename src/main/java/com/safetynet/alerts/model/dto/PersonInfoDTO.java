@@ -12,6 +12,9 @@ public class PersonInfoDTO {
 	List<String> allergies;
 	List<String> medications;
 
+	public boolean isChild(){
+		return age<=18;
+	}
 	public String getNom() {
 		return nom;
 	}
@@ -93,4 +96,17 @@ public class PersonInfoDTO {
 		this.medications = medications;
 	}
 
+	@Override
+	public String toString() {
+		return "PersonInfoDTO{" +
+				"nom='" + nom + '\'' +
+				", prenom='" + prenom + '\'' +
+				", age=" + age +
+				", email='" + email + '\'' +
+				", phone='" + phone + '\'' +
+				", address='" + address + '\'' +
+				", allergies=" + allergies +
+				", medications=" + medications +
+				'}';
+	}
 }

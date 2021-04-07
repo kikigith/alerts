@@ -286,6 +286,16 @@ public class DataRepository {
 		return foundFirestation;
 	}
 
+	public Firestation findFirestationByAddress(String address) throws JsonMappingException {
+		List<Firestation> firestations = jsonDataReader().getFirestations();
+		Firestation foundFirestation = null;
+		for (Firestation firestation : firestations) {
+			if (firestation.getAddress().equalsIgnoreCase(address))
+				foundFirestation = firestation;
+		}
+		return foundFirestation;
+	}
+
 	public List<MedicalRecord> findMedicalRecordByLastNameAndFirstName(String lastname, String firstname)
 			throws JsonMappingException {
 		List<MedicalRecord> foundMedicalRecords = new ArrayList<MedicalRecord>();
@@ -315,7 +325,7 @@ public class DataRepository {
 
 	}
 
-	public List<String> getPhonePersonsAtAddress(String address) throws JsonMappingException {
+	public List<String> getPersonsPhoneNumberAtAddress(String address) throws JsonMappingException {
 		List<String> personsPhone = new ArrayList<String>();
 		for (Person person : jsonDataReader().getPersons()) {
 			if (person.getAddress().equalsIgnoreCase(address)) {

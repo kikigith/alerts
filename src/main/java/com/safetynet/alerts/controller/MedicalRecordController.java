@@ -92,17 +92,10 @@ public class MedicalRecordController {
 	public ResponseEntity<MedicalRecord> deleteMedicalRecord(@RequestParam("lastname") final String lastname,
 			@RequestParam("firstname") final String firstname)
 			throws JsonParseException, JsonMappingException, IOException {
+		logger.info("Request Delete = @RequestBody = {},{}", lastname, firstname);
 		medicalRecordService.deleteMedicalRecord(lastname, firstname);
 		return new ResponseEntity<MedicalRecord>(HttpStatus.ACCEPTED);
 	}
 
-	/**
-	 * 
-	 * http://localhost:8080/childAlert?address=<address>
-	 */
-	@GetMapping("/childAlert")
-	public void getChildAlert() {
-
-	}
 
 }

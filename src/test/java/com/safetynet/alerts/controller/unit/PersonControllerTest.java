@@ -29,7 +29,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 import com.safetynet.alerts.controller.PersonController;
-import com.safetynet.alerts.exception.PersonIntrouvableException;
+import com.safetynet.alerts.exception.PersonNotFoundException;
 import com.safetynet.alerts.model.Person;
 import com.safetynet.alerts.model.dto.PersonInfoDTO;
 import com.safetynet.alerts.service.PersonService;
@@ -143,7 +143,7 @@ public class PersonControllerTest extends AbstractControllerTest {
 		when(personService.findPerson("mike", "karl")).thenReturn(null);
 
 		mockMvc.perform(delete(uri).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isNotFound())
-				.andExpect(result -> assertTrue(result.getResolvedException() instanceof PersonIntrouvableException));
+				.andExpect(result -> assertTrue(result.getResolvedException() instanceof PersonNotFoundException));
 //		assertThrows(PersonIntrouvableException.class, () -> {
 //			mockMvc.perform(delete(uri)).andReturn().getResponse().getStatus();
 //		});

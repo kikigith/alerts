@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.safetynet.alerts.model.dto.PersonsCoveredByStation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,8 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.safetynet.alerts.exception.InvalidMedicalRecordException;
-import com.safetynet.alerts.exception.MedicalRecordIntrouvableException;
+import com.safetynet.alerts.exception.MedicalRecordInvalidException;
+import com.safetynet.alerts.exception.MedicalRecordNotFoundException;
 import com.safetynet.alerts.model.MedicalRecord;
 import com.safetynet.alerts.model.Person;
 import com.safetynet.alerts.model.dto.PersonInfoDTO;
@@ -41,7 +42,7 @@ public class MedicalRecordService extends AbstractService {
 	public MedicalRecord updateMedicalRecord(MedicalRecord medicalRecord)
 			throws JsonParseException, JsonMappingException, IOException {
 		if (medicalRecord.getFirstName().isEmpty() || medicalRecord.getLastName().isEmpty()) {
-			throw new InvalidMedicalRecordException("Le champ nom/prénom ne peut être vide");
+			throw new MedicalRecordInvalidException("Le champ nom/prénom ne peut être vide");
 		}
 		logger.info(
 				"Updating  person nom: '" + medicalRecord.getFirstName() + "' prénom: '" + medicalRecord.getLastName());
@@ -54,7 +55,7 @@ public class MedicalRecordService extends AbstractService {
 		MedicalRecord mRecord = null;
 		try {
 			mRecord = dataRepository.findMedicalRecordByLastNameAndFirstName(lastname, firstname).get(0);
-		} catch (MedicalRecordIntrouvableException mrie) {
+		} catch (MedicalRecordNotFoundException mrie) {
 			// TODO: handle exception
 		} catch (JsonMappingException jme) {
 
@@ -64,7 +65,7 @@ public class MedicalRecordService extends AbstractService {
 		return mRecord;
 	}
 
-	public List<MedicalRecord> findMedicalRecords(String firstname, String lastname) throws JsonMappingException {
+	public List<MedicalRecord> findMedicalRecords(String lastname, String firstname) throws JsonMappingException {
 		return dataRepository.findMedicalRecordByLastNameAndFirstName(lastname, firstname);
 	}
 
@@ -89,7 +90,7 @@ public class MedicalRecordService extends AbstractService {
 
 		mrs.forEach((mr) -> {
 			try {
-				Person pers = personService.findPerson(mr.getFirstName(), mr.getLastName());
+				Person pers = personService.findPerson(mr.getLastName(),mr.getFirstName());
 				PersonInfoDTO personInfo = new PersonInfoDTO(mr.getFirstName(), mr.getLastName(),
 						Utils.calculateAge(mr.getBirthdate()), pers.getEmail(), pers.getPhone(), pers.getAddress(),
 						mr.getAllergies(), mr.getMedications());
@@ -103,6 +104,20 @@ public class MedicalRecordService extends AbstractService {
 		return personInfos;
 	}
 
+	public PersonInfoDTO convertMedicalRecordToPersonInfo(MedicalRecord mr){
+		PersonInfoDTO personInfo=null;
+		try {
+			Person pers = personService.findPerson(mr.getLastName(), mr.getFirstName());
+			personInfo = new PersonInfoDTO(mr.getFirstName(), mr.getLastName(),
+					Utils.calculateAge(mr.getBirthdate()), pers.getEmail(), pers.getPhone(), pers.getAddress(),
+					mr.getAllergies(), mr.getMedications());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return personInfo;
+	}
 	/**
 	 * retrieveMedicalRecordFromPersons - Retrieve medicalRecords for a list of
 	 * persons
@@ -136,5 +151,16 @@ public class MedicalRecordService extends AbstractService {
 		}
 		return personMR;
 	}
+
+	/**
+	 *
+	 * @return
+	 */
+	public PersonsCoveredByStation convertMedicalRecordToPersonsCovered(MedicalRecord mr){
+
+		return null;
+	}
+
+
 
 }

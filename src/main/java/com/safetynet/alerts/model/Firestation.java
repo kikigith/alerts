@@ -1,15 +1,17 @@
 package com.safetynet.alerts.model;
 
+import java.util.Objects;
+
 public class Firestation {
 
-	private Integer station;
+	private int station;
 	private String address;
 
 	public Firestation() {
 
 	}
 
-	public Firestation(Integer station, String address) {
+	public Firestation(int station, String address) {
 		super();
 		this.station = station;
 		this.address = address;
@@ -20,11 +22,11 @@ public class Firestation {
 		this.station = station;
 	}
 
-	public Integer getStation() {
+	public int getStation() {
 		return station;
 	}
 
-	public void setStation(Integer station) {
+	public void setStation(int station) {
 		this.station = station;
 	}
 
@@ -37,28 +39,16 @@ public class Firestation {
 	}
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((station == null) ? 0 : station.hashCode());
-		return result;
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Firestation that = (Firestation) o;
+		return station == that.station && Objects.equals(address, that.address);
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Firestation other = (Firestation) obj;
-		if (station == null) {
-			if (other.station != null)
-				return false;
-		} else if (!station.equals(other.station))
-			return false;
-		return true;
+	public int hashCode() {
+		return Objects.hash(station, address);
 	}
 
 	@Override

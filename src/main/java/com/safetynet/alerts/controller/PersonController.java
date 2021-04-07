@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.safetynet.alerts.exception.InvalidPersonException;
-import com.safetynet.alerts.exception.PersonIntrouvableException;
+import com.safetynet.alerts.exception.PersonInvalidException;
+import com.safetynet.alerts.exception.PersonNotFoundException;
 import com.safetynet.alerts.model.Person;
 import com.safetynet.alerts.model.dto.PersonInfoDTO;
 import com.safetynet.alerts.service.PersonService;
@@ -156,11 +156,11 @@ public class PersonController {
 		logger.info("Request Delete person firstname {}, lastname {}", firstname, lastname);
 		if (lastname.isEmpty() || firstname.isEmpty()) {
 			response = new ResponseEntity<Person>(HttpStatus.BAD_REQUEST);
-			throw new InvalidPersonException("Les champs nom/prénoms ne peuvent être vides");
+			throw new PersonInvalidException("Les champs nom/prénoms ne peuvent être vides");
 		}
 		if (personService.findPerson(lastname, firstname) == null) {
 			response = new ResponseEntity<Person>(HttpStatus.NOT_FOUND);
-			throw new PersonIntrouvableException(
+			throw new PersonNotFoundException(
 					"la personne nom:" + lastname + " prénom:" + firstname + " est introuvable");
 
 		}
@@ -182,11 +182,26 @@ public class PersonController {
 	 */
 	@GetMapping("/personInfo")
 	public ResponseEntity<List<PersonInfoDTO>> getPersonInfo(@RequestParam("lastname") String lastname,
-			@RequestParam("firstname") String firstname) throws Exception {
+															 @RequestParam("firstname") String firstname) throws Exception {
 
-		logger.info("Request Delete person firstname {}, lastname {}", firstname, lastname);
+		logger.info("Request Delete person firstname {}, lastname {}", firstname, lastname);
 		List<PersonInfoDTO> searchResult = personService.getPersonInfos(lastname, firstname);
 		return new ResponseEntity<List<PersonInfoDTO>>(searchResult, HttpStatus.OK);
+	}
+
+	/**
+	 * getCommunityEmail - List email addresses for inhabitants of a given city
+	 * @param city
+	 * @return
+	 *
+	 * http://localhost:8080/communityEmail?city=<city>
+	 */
+	@GetMapping("/communityEmail")
+	public ResponseEntity<List<String>> getCommunityEmail(@RequestParam("city") String city){
+		logger.info("Request community {} emails ", city );
+		List<String> emails= personService.getCommunityEmail(city);
+
+		return new ResponseEntity<List<String>>(emails, HttpStatus.OK);
 	}
 
 }

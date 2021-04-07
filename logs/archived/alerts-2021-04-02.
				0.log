@@ -1,0 +1,328 @@
+2021-04-02 11:05:25,600 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 1593 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:05:25,602 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:05:26,337 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 1.043 seconds (JVM running for 1.26)
+2021-04-02 11:07:23,928 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-3] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 11:14:39,293 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 5551 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:14:39,295 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:14:40,897 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 2.184 seconds (JVM running for 4.366)
+2021-04-02 11:14:41,430 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-04-02 11:14:41,457 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-04-02 11:14:41,517 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-04-02 11:14:41,544 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-04-02 11:14:41,570 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-04-02 11:14:41,634 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 5551 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:14:41,634 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:14:42,150 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.544 seconds (JVM running for 5.619)
+2021-04-02 11:14:42,191 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-04-02 11:14:42,194 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-04-02 11:14:42,210 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-04-02 11:14:42,225 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-04-02 11:14:42,276 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 5551 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:14:42,277 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:14:42,850 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 0.604 seconds (JVM running for 6.319)
+2021-04-02 11:15:24,651 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-04-02 11:15:24,651 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-04-02 11:15:24,655 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-04-02 11:15:24,655 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-04-02 11:15:24,702 INFO org.springframework.boot.StartupInfoLogger [main] Starting MedicalRecordControllerTest using Java 11.0.10 on hero with PID 5551 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:15:24,702 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:15:25,020 INFO org.springframework.boot.StartupInfoLogger [main] Started MedicalRecordControllerTest in 0.346 seconds (JVM running for 48.489)
+2021-04-02 11:15:25,031 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-04-02 11:15:25,032 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Fri Feb 25 00:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-04-02 11:15:25,042 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-04-02 11:15:25,049 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request Delete = @RequestBody = Dupond,Aline
+2021-04-02 11:15:25,058 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Durand, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-04-02 11:15:25,069 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-04-02 11:15:25,072 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updating  person nom: 'Bill' prénom: 'Gink
+2021-04-02 11:15:25,073 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updated  to: MedicalRecord [firstName=Bill, lastName=Gink, birthdate=null, medications=null, allergies=null]
+2021-04-02 11:15:25,101 INFO org.springframework.boot.StartupInfoLogger [main] Starting PersonControllerTest using Java 11.0.10 on hero with PID 5551 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:15:25,101 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:15:25,387 INFO org.springframework.boot.StartupInfoLogger [main] Started PersonControllerTest in 0.301 seconds (JVM running for 48.856)
+2021-04-02 11:15:25,394 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-04-02 11:15:25,404 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-04-02 11:15:25,405 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-04-02 11:15:25,414 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Franklin, firstName=LORD, address=43 Bruyère, city=Albatros, zip=8484848, phone=0203003, email=flord@test.com]
+2021-04-02 11:15:25,423 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-04-02 11:15:25,438 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-04-02 11:15:25,450 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Dupont, lastname Aline
+2021-04-02 11:16:23,404 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-04-02 11:16:23,428 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-04-02 11:16:40,988 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 6375 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:16:40,990 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:16:42,572 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 1.955 seconds (JVM running for 3.574)
+2021-04-02 11:16:43,125 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-04-02 11:16:43,152 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-04-02 11:16:43,212 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-04-02 11:16:43,237 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-04-02 11:16:43,274 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-04-02 11:16:43,362 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 6375 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:16:43,363 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:16:43,965 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.64 seconds (JVM running for 4.967)
+2021-04-02 11:16:44,242 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-04-02 11:16:44,244 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-04-02 11:16:44,255 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-04-02 11:16:44,266 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-04-02 11:16:44,308 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 6375 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:16:44,309 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:16:44,780 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 0.496 seconds (JVM running for 5.781)
+2021-04-02 11:16:45,008 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-04-02 11:16:45,009 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-04-02 11:16:45,014 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-04-02 11:16:45,015 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-04-02 11:16:45,056 INFO org.springframework.boot.StartupInfoLogger [main] Starting MedicalRecordControllerTest using Java 11.0.10 on hero with PID 6375 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:16:45,056 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:16:45,374 INFO org.springframework.boot.StartupInfoLogger [main] Started MedicalRecordControllerTest in 0.343 seconds (JVM running for 6.376)
+2021-04-02 11:16:45,385 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-04-02 11:16:45,385 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Fri Feb 25 00:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-04-02 11:16:45,395 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-04-02 11:16:45,406 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request Delete = @RequestBody = Dupond,Aline
+2021-04-02 11:16:45,416 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Durand, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-04-02 11:16:45,430 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-04-02 11:16:45,434 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updating  person nom: 'Bill' prénom: 'Gink
+2021-04-02 11:16:45,435 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updated  to: MedicalRecord [firstName=Bill, lastName=Gink, birthdate=null, medications=null, allergies=null]
+2021-04-02 11:16:45,477 INFO org.springframework.boot.StartupInfoLogger [main] Starting PersonControllerTest using Java 11.0.10 on hero with PID 6375 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 11:16:45,477 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 11:16:45,813 INFO org.springframework.boot.StartupInfoLogger [main] Started PersonControllerTest in 0.361 seconds (JVM running for 6.815)
+2021-04-02 11:16:45,820 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-04-02 11:16:45,835 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-04-02 11:16:45,836 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-04-02 11:16:45,851 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Franklin, firstName=LORD, address=43 Bruyère, city=Albatros, zip=8484848, phone=0203003, email=flord@test.com]
+2021-04-02 11:16:45,863 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-04-02 11:16:45,884 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-04-02 11:16:45,898 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Dupont, lastname Aline
+2021-04-02 16:42:55,709 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-04-02 16:42:55,741 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-04-02 16:44:27,970 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 4361 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 16:44:27,972 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 16:44:30,372 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 3.07 seconds (JVM running for 6.325)
+2021-04-02 16:44:31,149 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-04-02 16:44:31,184 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-04-02 16:44:31,289 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-04-02 16:44:31,328 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-04-02 16:44:31,370 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-04-02 16:44:31,512 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 4361 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 16:44:31,514 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 16:44:32,341 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.896 seconds (JVM running for 8.295)
+2021-04-02 16:44:32,421 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-04-02 16:44:32,425 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-04-02 16:44:32,449 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-04-02 16:44:32,467 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-04-02 16:44:32,531 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 4361 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 16:44:32,532 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 16:44:33,282 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 0.787 seconds (JVM running for 9.235)
+2021-04-02 16:44:33,671 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-04-02 16:44:33,672 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-04-02 16:44:33,684 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-04-02 16:44:33,685 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-04-02 16:44:33,769 INFO org.springframework.boot.StartupInfoLogger [main] Starting MedicalRecordControllerTest using Java 11.0.10 on hero with PID 4361 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 16:44:33,770 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 16:44:34,325 INFO org.springframework.boot.StartupInfoLogger [main] Started MedicalRecordControllerTest in 0.6 seconds (JVM running for 10.278)
+2021-04-02 16:44:34,348 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Thu Feb 24 01:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-04-02 16:44:34,349 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Response = @ResponseBody = MedicalRecord [firstName=Aline, lastName=Dupont, birthdate=Fri Feb 25 00:00:00 WAT 2000, medications=[beotim:200mg, flavoquine:400mg], allergies=[spatonine, alacol]]
+2021-04-02 16:44:34,368 INFO com.safetynet.alerts.controller.MedicalRecordController [main] GET /medicalrecords called
+2021-04-02 16:44:34,381 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request Delete = @RequestBody = Dupond,Aline
+2021-04-02 16:44:34,405 INFO com.safetynet.alerts.controller.MedicalRecordController [main] Request = @RequestBody = MedicalRecord [firstName=Aline, lastName=Durand, birthdate=Wed Feb 14 01:00:00 WAT 2001, medications=[quinine:200mg, chloroquine:400mg], allergies=[spatomine, beoziol]]
+2021-04-02 16:44:34,427 INFO com.safetynet.alerts.service.MedicalRecordService [main] Deleting the person
+2021-04-02 16:44:34,431 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updating  person nom: 'Bill' prénom: 'Gink
+2021-04-02 16:44:34,431 INFO com.safetynet.alerts.service.MedicalRecordService [main] Updated  to: MedicalRecord [firstName=Bill, lastName=Gink, birthdate=null, medications=null, allergies=null]
+2021-04-02 16:44:34,504 INFO org.springframework.boot.StartupInfoLogger [main] Starting PersonControllerTest using Java 11.0.10 on hero with PID 4361 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 16:44:34,505 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 16:44:35,085 INFO org.springframework.boot.StartupInfoLogger [main] Started PersonControllerTest in 0.627 seconds (JVM running for 11.039)
+2021-04-02 16:44:35,095 INFO com.safetynet.alerts.controller.PersonController [main] GET /persons called
+2021-04-02 16:44:35,111 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-04-02 16:44:35,112 INFO com.safetynet.alerts.controller.PersonController [main] Response = @ResponseBody = Person [lastName=Martin, firstName=Bruce, address=25, Avenue RIO, city=Porto, zip=null, phone=32002020, email=bmartin@gmail.com]
+2021-04-02 16:44:35,129 INFO com.safetynet.alerts.controller.PersonController [main] Request = @RequestBody = Person [lastName=Franklin, firstName=LORD, address=43 Bruyère, city=Albatros, zip=8484848, phone=0203003, email=flord@test.com]
+2021-04-02 16:44:35,144 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-04-02 16:44:35,170 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname karl, lastname mike
+2021-04-02 16:44:35,183 INFO com.safetynet.alerts.controller.PersonController [main] Request Delete person firstname Dupont, lastname Aline
+2021-04-02 16:54:52,328 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 8934 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 16:54:52,333 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 16:54:54,187 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 2.795 seconds (JVM running for 3.598)
+2021-04-02 16:55:04,517 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-1] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 16:55:59,596 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 9836 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 16:55:59,606 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 16:56:04,124 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 6.471 seconds (JVM running for 7.887)
+2021-04-02 16:56:09,696 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-2] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 16:58:37,668 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 11175 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 16:58:37,671 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 16:58:39,037 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 2.028 seconds (JVM running for 2.445)
+2021-04-02 16:59:05,164 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-2] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 16:59:25,576 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 11591 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 16:59:25,580 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 16:59:26,986 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 2.163 seconds (JVM running for 2.675)
+2021-04-02 16:59:33,526 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-2] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 17:01:37,444 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 12515 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 17:01:37,448 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 17:01:39,013 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 2.274 seconds (JVM running for 2.855)
+2021-04-02 17:01:44,724 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-2] Request Delete person firstname Sherpard, lastname Foster
+2021-04-02 17:02:08,738 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-3] Request Delete person firstname Sherpard, lastname Foster
+2021-04-02 17:02:48,198 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 12994 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 17:02:48,201 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 17:02:49,592 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 2.094 seconds (JVM running for 2.711)
+2021-04-02 17:02:54,555 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-2] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 17:03:17,078 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-3] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 17:05:09,124 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 13956 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 17:05:09,127 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 17:05:10,735 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 2.344 seconds (JVM running for 3.002)
+2021-04-02 17:05:18,118 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-1] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 17:09:29,521 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 15941 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 17:09:29,524 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 17:09:31,584 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 2.767 seconds (JVM running for 3.419)
+2021-04-02 17:09:35,296 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-2] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 17:10:52,522 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 16454 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 17:10:52,532 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 17:10:56,890 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 6.307 seconds (JVM running for 7.2)
+2021-04-02 17:11:01,911 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-2] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 17:16:41,368 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 18591 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 17:16:41,376 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 17:16:46,388 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 7.314 seconds (JVM running for 8.928)
+2021-04-02 17:16:59,476 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-1] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 17:22:30,508 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 20769 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 17:22:30,511 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 17:22:31,857 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 1.842 seconds (JVM running for 2.269)
+2021-04-02 17:22:38,338 INFO com.safetynet.alerts.controller.PersonController [http-nio-9090-exec-1] Request Delete person firstname Foster, lastname Shepard
+2021-04-02 19:50:05,258 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 22539 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 19:50:05,262 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 19:50:06,499 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 1.728 seconds (JVM running for 2.191)
+2021-04-02 19:51:02,692 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Request: retrieve phone number for residents covered by station 1 
+2021-04-02 19:51:02,819 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Response: phone number for residents covered by station 1 : [841-874-7784, 841-874-7784, 841-874-7784]
+2021-04-02 19:51:11,745 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-3] Request: retrieve phone number for residents covered by station 2 
+2021-04-02 19:51:11,765 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-3] Response: phone number for residents covered by station 2 : [841-874-7458]
+2021-04-02 19:53:10,092 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-6] Request: retrieve phone number for residents covered by station 3 
+2021-04-02 19:53:10,116 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-6] Response: phone number for residents covered by station 3 : [841-874-6544, 841-874-6741]
+2021-04-02 19:53:30,011 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-8] Request: retrieve phone number for residents covered by station 10 
+2021-04-02 19:53:30,025 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-8] Response: phone number for residents covered by station 10 : []
+2021-04-02 19:54:12,554 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-10] Request: retrieve Persons covered by station 2
+2021-04-02 19:54:12,593 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-10] Response : persons covered by station 2: com.safetynet.alerts.model.dto.PersonsCoveredByStation@34486ff0
+2021-04-02 19:54:43,408 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-2] Request: retrieve Persons covered by station 3
+2021-04-02 19:54:43,478 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-2] Response : persons covered by station 3: com.safetynet.alerts.model.dto.PersonsCoveredByStation@35c4442a
+2021-04-02 19:54:54,227 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-4] Request: retrieve Persons covered by station 4
+2021-04-02 19:54:54,285 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-4] Response : persons covered by station 4: com.safetynet.alerts.model.dto.PersonsCoveredByStation@4985fc06
+2021-04-02 19:55:19,903 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-6] Request: retrieve Persons covered by station 5
+2021-04-02 19:55:19,915 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-9090-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.safetynet.alerts.service.FirestationService.getPersonsCoveredByStation(FirestationService.java:90)
+	at com.safetynet.alerts.controller.FirestationController.getPersonDeserved(FirestationController.java:121)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:807)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-04-02 19:57:08,927 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-8] Request: retrieve children covered at address "892 Downing Ct"
+2021-04-02 19:57:08,933 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-8] Response : persons covered at address "892 Downing Ct" : com.safetynet.alerts.model.dto.ChildrenCoveredDTO@7251174c
+2021-04-02 19:57:34,585 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-10] Request: retrieve children covered at address "644 Gershwin Cir"
+2021-04-02 19:57:34,592 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-10] Response : persons covered at address "644 Gershwin Cir" : com.safetynet.alerts.model.dto.ChildrenCoveredDTO@75578b04
+2021-04-02 21:21:26,263 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-3] Request: retrieve Persons covered by station 4
+2021-04-02 21:21:26,309 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-3] Response : persons covered by station 4: com.safetynet.alerts.model.dto.PersonsCoveredByStation@7a20b894
+2021-04-02 21:24:31,498 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 25779 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:24:31,500 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:24:33,008 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 1.993 seconds (JVM running for 2.396)
+2021-04-02 21:24:48,366 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerIT using Java 11.0.10 on hero with PID 25898 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:24:48,368 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:24:49,749 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerIT in 1.775 seconds (JVM running for 3.325)
+2021-04-02 21:24:50,243 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=67 Rue michon]
+2021-04-02 21:24:50,265 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=67 Rue michon]
+2021-04-02 21:24:50,317 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-04-02 21:24:50,340 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=10, address=69 Rue machon]
+2021-04-02 21:24:50,370 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=10, address=69 Rue machon]
+2021-04-02 21:24:50,439 INFO org.springframework.boot.StartupInfoLogger [main] Starting FirestationControllerTest using Java 11.0.10 on hero with PID 25898 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:24:50,439 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:24:50,927 INFO org.springframework.boot.StartupInfoLogger [main] Started FirestationControllerTest in 0.511 seconds (JVM running for 4.503)
+2021-04-02 21:24:50,967 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-04-02 21:24:50,970 INFO com.safetynet.alerts.controller.FirestationController [main] Response = @ResponseBody = Firestation [station=1, address=Rue 34 Cotonou]
+2021-04-02 21:24:50,986 INFO com.safetynet.alerts.controller.FirestationController [main] GET /firestations called
+2021-04-02 21:24:50,998 INFO com.safetynet.alerts.controller.FirestationController [main] Request = @RequestBody = Firestation [station=1, address=Rue 35 Cotonou]
+2021-04-02 21:24:51,042 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplicationTests using Java 11.0.10 on hero with PID 25898 (started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:24:51,043 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:24:51,510 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplicationTests in 0.493 seconds (JVM running for 5.087)
+2021-04-02 21:24:51,823 INFO com.safetynet.alerts.service.PersonService [main] Updating  person nom: 'mike' prénom: 'fiver
+2021-04-02 21:24:51,824 INFO com.safetynet.alerts.service.PersonService [main] Updated  to: Person [lastName=fiver, firstName=mike, address=null, city=null, zip=null, phone=null, email=null]
+2021-04-02 21:24:51,831 INFO com.safetynet.alerts.service.PersonService [main] Deleting the person
+2021-04-02 21:25:05,412 INFO com.safetynet.alerts.service.PersonService [main] Person [nom:mike prénom:fred] successfully deleted
+2021-04-02 21:25:23,158 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 26379 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:25:23,160 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:25:24,486 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 1.86 seconds (JVM running for 2.255)
+2021-04-02 21:25:30,580 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Request: retrieve Persons covered by station 4
+2021-04-02 21:25:30,731 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Response : persons covered by station 4: PersonsCoveredByStation{stationID=4, personsCovered=[com.safetynet.alerts.model.dto.PersonInfoDTO@6191c27c, com.safetynet.alerts.model.dto.PersonInfoDTO@70d0f596, com.safetynet.alerts.model.dto.PersonInfoDTO@3e9d1b36], nbAdult=3, nbEnfants=0}
+2021-04-02 21:27:09,126 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 27444 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:27:09,133 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:27:11,003 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 2.844 seconds (JVM running for 3.376)
+2021-04-02 21:27:25,449 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Request: retrieve Persons covered by station 4
+2021-04-02 21:27:25,704 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Response : persons covered by station 4: PersonsCoveredByStation{stationID=4, personsCovered=[com.safetynet.alerts.model.dto.PersonInfoDTO@57c77a46, com.safetynet.alerts.model.dto.PersonInfoDTO@19add936, com.safetynet.alerts.model.dto.PersonInfoDTO@16aeab50], nbAdult=3, nbEnfants=0}
+2021-04-02 21:28:42,606 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 28487 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:28:42,609 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:28:43,843 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 1.772 seconds (JVM running for 2.212)
+2021-04-02 21:28:50,861 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Request: retrieve Persons covered by station 4
+2021-04-02 21:28:51,108 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Response : persons covered by station 4: PersonsCoveredByStation{stationID=4, personsCovered=[PersonInfoDTO{nom='Tony', prenom='Cooper', age=1926, email='tcoop@ymail.com', phone='841-874-6874', address='112 Steppes Pl', allergies=[shellfish], medications=[hydrapermazol:300mg, dodoxadin:30mg]}, PersonInfoDTO{nom='Ron', prenom='Peters', age=1955, email='jpeter@email.com', phone='841-874-8888', address='112 Steppes Pl', allergies=[], medications=[]}, PersonInfoDTO{nom='Allison', prenom='Boyd', age=1955, email='aly@imail.com', phone='841-874-9888', address='112 Steppes Pl', allergies=[nillacilan], medications=[aznol:200mg]}], nbAdult=3, nbEnfants=0}
+2021-04-02 21:33:07,181 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 30538 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:33:07,185 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:33:08,503 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 1.913 seconds (JVM running for 2.361)
+2021-04-02 21:34:04,762 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 30960 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:34:04,765 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:34:06,069 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 1.89 seconds (JVM running for 2.431)
+2021-04-02 21:47:08,972 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 3705 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:47:08,975 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:47:10,833 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 2.528 seconds (JVM running for 3.762)
+2021-04-02 21:47:28,222 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Request: retrieve children covered at address "892 Downing Ct"
+2021-04-02 21:50:50,710 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Response : persons covered at address "892 Downing Ct" : com.safetynet.alerts.model.dto.ChildrenCoveredDTO@755e200c
+2021-04-02 21:50:50,715 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-3] Request: retrieve children covered at address 892 Downing Ct
+2021-04-02 21:50:50,721 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-4] Request: retrieve children covered at address 892 Downing Ct
+2021-04-02 21:50:50,721 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-5] Request: retrieve children covered at address "892 Downing Ct"
+2021-04-02 21:50:50,738 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-5] Response : persons covered at address "892 Downing Ct" : com.safetynet.alerts.model.dto.ChildrenCoveredDTO@44883037
+2021-04-02 21:50:50,802 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-4] Response : persons covered at address 892 Downing Ct : com.safetynet.alerts.model.dto.ChildrenCoveredDTO@59729b3
+2021-04-02 21:50:50,804 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-3] Response : persons covered at address 892 Downing Ct : com.safetynet.alerts.model.dto.ChildrenCoveredDTO@a04f230
+2021-04-02 21:50:59,831 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 4830 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 21:50:59,835 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 21:51:01,274 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 2.121 seconds (JVM running for 2.702)
+2021-04-02 21:51:20,018 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Request: retrieve children covered at address 892 Downing Ct
+2021-04-02 21:53:11,909 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Response : persons covered at address 892 Downing Ct : com.safetynet.alerts.model.dto.ChildrenCoveredDTO@2d7138a2
+2021-04-02 22:03:11,470 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlertsApplication using Java 11.0.10 on hero with PID 10330 (/home/kiki/IdeaProjects/alerts/target/classes started by kiki in /home/kiki/IdeaProjects/alerts)
+2021-04-02 22:03:11,472 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: development
+2021-04-02 22:03:12,695 INFO org.springframework.boot.StartupInfoLogger [main] Started AlertsApplication in 1.74 seconds (JVM running for 2.285)
+2021-04-02 22:03:22,420 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Request: retrieve persons covered at address 892 Downing Ct
+2021-04-02 22:03:22,677 INFO com.safetynet.alerts.controller.FirestationController [http-nio-9090-exec-1] Response : persons covered at address PersonsCoveredByStation{stationID=2, personsCovered=[PersonInfoDTO{nom='Sophia', prenom='Zemicks', age=1932, email='soph@email.com', phone='841-874-7878', address='892 Downing Ct', allergies=[peanut, shellfish, aznol], medications=[aznol:60mg, hydrapermazol:900mg, pharmacol:5000mg, terazine:500mg]}, PersonInfoDTO{nom='Warren', prenom='Zemicks', age=1935, email='ward@email.com', phone='841-874-7512', address='892 Downing Ct', allergies=[], medications=[]}, PersonInfoDTO{nom='Zach', prenom='Zemicks', age=1903, email='zarc@email.com', phone='841-874-7512', address='892 Downing Ct', allergies=[], medications=[]}], nbAdult=0, nbEnfants=0}
