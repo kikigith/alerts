@@ -1,5 +1,6 @@
 package com.safetynet.alerts.controller.integration;
 
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -79,4 +80,30 @@ public class FirestationControllerIT extends AbstractITControllerTest {
 
 		mockMvc.perform(delete("/firestation?stationId=10")).andExpect(status().isAccepted());
 	}
+
+
+	@Test
+	public void given_A_Station_Id_Return_A_List_of_PersonWithAge_covered() throws Exception{
+		mockMvc.perform(get("/firestation?stationNumber=10")).andExpect(status().isOk())
+		.andDo(print());
+	}
+
+	@Test
+	public void given_A_Station_Id_Return_residents_Phones() throws Exception{
+		mockMvc.perform(get("/phoneAlert?firestation=10")).andExpect(status().isOk())
+		.andDo(print());
+	}
+
+	@Test
+	public void given_An_Address_should_Return_Children_Covered() throws Exception{
+		mockMvc.perform(get("/childAlert?address=cotonou")).andExpect(status().isOk())
+		.andDo(print());
+	}
+
+	@Test
+	public void given_An_Address_should_Return_residents_and_station_Covering() throws Exception{
+		mockMvc.perform(get("/fire?address=1509 Culver St")).andExpect(status().isOk())
+				.andDo(print());
+	}
+
 }

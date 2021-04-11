@@ -1,6 +1,7 @@
 package com.safetynet.alerts.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -11,7 +12,9 @@ import com.safetynet.alerts.exception.FirestationInvalidException;
 import com.safetynet.alerts.exception.FirestationNotFoundException;
 import com.safetynet.alerts.model.MedicalRecord;
 import com.safetynet.alerts.model.Person;
+import com.safetynet.alerts.model.dto.ChildrenCoveredDTO;
 import com.safetynet.alerts.model.dto.PersonsCoveredByStation;
+import com.safetynet.alerts.model.dto.StationCoverageDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -49,6 +52,12 @@ public class FirestationServiceTest {
 	List<String> phones;
 
 	Firestation fs;
+
+	StationCoverageDTO stationCoverage1, stationCoverage2;
+	List<StationCoverageDTO> stationsCoverage;
+	Firestation station1, station2;
+	Person person1, person2, person3, person4;
+	List<Person> personsCovered1, personsCovered2;
 
 	@BeforeEach
 	public void initTest() throws Exception{
@@ -96,12 +105,45 @@ public class FirestationServiceTest {
 		phones.add("57 985 267");
 		phones.add("78 908 526");
 
+		station1 = new Firestation();
+		station1.setStation(1);
+		station1.setAddress("24 rue Toho");
+		station2 = new Firestation();
+		station2.setStation(2);
+		station2.setAddress("98 station Balneaire");
+
+		stationCoverage1 = new StationCoverageDTO();
+		stationCoverage1.setAddress("24 rue Toho");
+		person1 = new Person();
+		person1.setFirstName("Alice");
+		person2 = new Person();
+		person2.setFirstName("Dossa");
+		personsCovered1  = new ArrayList<>();
+		personsCovered1.add(person1);
+		personsCovered1.add(person2);
+		stationCoverage1.setPersonsCovered(personsCovered1);
+
+		stationCoverage2 = new StationCoverageDTO();
+		stationCoverage2.setAddress("98 station Balneaire");
+		person3 = new Person();
+		person3.setFirstName("Victoire");
+		person4 = new Person();
+		person4.setFirstName("Dossa");
+		personsCovered2 = new ArrayList<>();
+		personsCovered2.add(person3);
+		personsCovered2.add(person4);
+		stationCoverage2.setPersonsCovered(personsCovered2);
+
+		stationsCoverage = new ArrayList<>();
+		stationsCoverage.add(stationCoverage1);
+		stationsCoverage.add(stationCoverage2);
+
 
 
 	}
 
 	@Test
-	public void testSaveFirestation() throws Exception {
+	public void given_A_Station_should_be_Saved() throws Exception {
 		Firestation firestation = new Firestation();
 
 		when(dataRepository.saveFirestation(any(Firestation.class))).thenReturn(firestation);
@@ -131,16 +173,6 @@ public class FirestationServiceTest {
 		firestation.setStation(2);
 
 		Assertions.assertThrows(FirestationNotFoundException.class, ()-> {
-			firestationService.updateFirestation(firestation);
-		});
-	}
-
-	@Test
-	void given_An_invalid_station_ID_update_should_raise_exception() throws Exception{
-		Firestation firestation = new Firestation();
-		firestation.setStation(0);
-
-		Assertions.assertThrows(FirestationInvalidException.class, ()-> {
 			firestationService.updateFirestation(firestation);
 		});
 	}
@@ -184,4 +216,59 @@ public class FirestationServiceTest {
 
 		assertThat(residentPhones.get(0)).isSameAs(phones.get(0));
 	}
+
+
+	@Test
+	void given_an_Address_Should_return_children_Covered() throws Exception {
+		when(dataRepository.getPersonsAtAddress(address)).thenReturn(persons);
+		when(medicalRecordService.getMedicalRecordForAPerson(p1)).thenReturn(mr1);
+		when(medicalRecordService.getMedicalRecordForAPerson(p2)).thenReturn(mr2);
+		when(medicalRecordService.convertMedicalRecordToPersonInfo(mr1)).thenReturn(pi1);
+		when(medicalRecordService.convertMedicalRecordToPersonInfo(mr2)).thenReturn(pi2);
+
+		ChildrenCoveredDTO childrenCovered=firestationService.getChildrenCovered(fs.getAddress());
+
+		assertThat(childrenCovered.getEnfants().get(0).getPrenom()).isSameAs(pi2.getPrenom());
+	}
+
+
+	@Test
+	void given_an_Address_should_return_residents_and_station() throws Exception{
+		when(dataRepository.getPersonsAtAddress(address)).thenReturn(persons);
+		when(dataRepository.findFirestationByAddress(address)).thenReturn(fs);
+		when(medicalRecordService.getMedicalRecordForAPerson(p1)).thenReturn(mr1);
+		when(medicalRecordService.getMedicalRecordForAPerson(p2)).thenReturn(mr2);
+		when(medicalRecordService.convertMedicalRecordToPersonInfo(mr1)).thenReturn(pi1);
+		when(medicalRecordService.convertMedicalRecordToPersonInfo(mr2)).thenReturn(pi2);
+
+		PersonsCoveredByStation personsCoveredByStation= firestationService.getStationAndPersonsCoveredAtAddress(address);
+		assertThat(personsCoveredByStation.getPersonsCovered().get(0).getPrenom()).isSameAs(pi2.getPrenom());
+	}
+
+
+	@Test
+	void given_A_stationID_should_return_covered_homes () throws Exception{
+		when(dataRepository.findFirestation(1)).thenReturn(station1);
+		when(dataRepository.getPersonsAtAddress(station1.getAddress())).thenReturn(personsCovered1);
+
+		StationCoverageDTO stationCoverage=firestationService.generateStationCoverage(1);
+		assertThat(stationCoverage.getPersonsCovered().get(0).getFirstName()).isSameAs(person1.getFirstName());
+
+	}
+
+	@Test
+	void given_A_list_of_stationID_should_return_covered_homes () throws Exception{
+		when(dataRepository.findFirestation(1)).thenReturn(station1);
+		when(dataRepository.getPersonsAtAddress(station1.getAddress())).thenReturn(personsCovered1);
+		when(dataRepository.findFirestation(2)).thenReturn(station2);
+		when(dataRepository.getPersonsAtAddress(station2.getAddress())).thenReturn(personsCovered2);
+		List<Integer> stations = new ArrayList<>();
+		stations.add(1);
+		stations.add(2);
+		List<StationCoverageDTO> stationsCoverage=firestationService.getStationsCoverage(stations);
+
+		assertThat(stationsCoverage.get(0).getPersonsCovered().get(0).getFirstName()).isSameAs(person1.getFirstName());
+		assertThat(stationsCoverage.get(1).getPersonsCovered().get(0).getFirstName()).isSameAs(person3.getFirstName());
+	}
+
 }

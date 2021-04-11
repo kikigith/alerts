@@ -37,7 +37,7 @@ public class PersonServiceTest {
 	List<MedicalRecord> mr;
 	List<PersonInfoDTO> personInfo;
 	List<Person> persons;
-	Person person, pers1, pers2;
+	Person person, pers1, pers2, pers3;
 
 	@BeforeEach
 	void initTest() {
@@ -71,11 +71,25 @@ public class PersonServiceTest {
 		pers1 = new Person();
 		pers1.setFirstName("mike");
 		pers1.setLastName("fred");
+		pers1.setCity("cotonou");
+		pers1.setEmail("fmike@gmail.com");
+		pers1.setAddress("23 rue dubond");
 		persons.add(pers1);
 		pers2 = new Person();
 		pers2.setFirstName("Julie");
 		pers2.setLastName("Oulard");
+		pers2.setCity("cotonou");
+		pers2.setEmail("ojulie@outlook.com");
+		pers2.setAddress("45 avenue 2");
 		persons.add(pers2);
+		pers3 = new Person();
+		pers3.setFirstName("Benon");
+		pers3.setLastName("Fiacre");
+		pers3.setCity("Allada");
+		pers3.setEmail("fbenon@yahoo.fr");
+		pers3.setAddress("45 avenue 2");
+		persons.add(pers3);
+
 
 		persons.add(person);
 	}
@@ -121,7 +135,7 @@ public class PersonServiceTest {
 
 		verify(dataRepository).findAllPerson();
 
-		assertThat(allPersons).hasSize(3);
+		assertThat(allPersons).hasSize(4);
 	}
 
 	@Test
@@ -142,6 +156,24 @@ public class PersonServiceTest {
 //		verify(utils).ca
 //		assertThat(pinfo).hasSameSizeAs(personInfo);
 
+	}
+
+	@Test
+	public void given_A_city_should_return_community_emails() throws Exception{
+		when(dataRepository.findAllPerson()).thenReturn(persons);
+
+		List<String> cotonoucommunity=personService.getCommunityEmail("cotonou");
+		assertThat(cotonoucommunity).hasSize(2);
+		assertThat(cotonoucommunity.contains(pers1.getEmail()));
+	}
+
+	@Test
+	public void given_An_Adress_should_return_Persons() throws Exception{
+		when(dataRepository.findAllPerson()).thenReturn(persons);
+
+		List<Person> personsFound=personService.findPersonByAddress("45 avenue 2");
+		assertThat(personsFound).hasSize(2);
+		//assertThat(personsFound.contains(pers3.getEmail());
 	}
 
 }

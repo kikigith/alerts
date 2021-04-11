@@ -29,6 +29,7 @@ public class PersonService {
 	@Autowired
 	private MedicalRecordService medicalRecordService;
 
+
 	public List<Person> findAll() throws Exception {
 
 		return dataRepository.findAllPerson();
@@ -90,9 +91,9 @@ public class PersonService {
 
 		} catch (JsonMappingException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 		return medicalRecordService.convertMedicalRecordsToPersonInfos(mrs);
 	}
@@ -126,9 +127,9 @@ public class PersonService {
 				cityInhabitantsEmails.add(pers.getEmail());
 			}
 		});
-		if(cityInhabitantsEmails.size()==0){
+		/*if(cityInhabitantsEmails.size()==0){
 			throw new CityNotFoundException("La ville "+city +" est introuvable");
-		}
+		}*/
 
 		return cityInhabitantsEmails;
 	}

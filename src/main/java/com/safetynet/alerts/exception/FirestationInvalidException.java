@@ -3,9 +3,9 @@ package com.safetynet.alerts.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.BAD_REQUEST)
+//@ResponseStatus(HttpStatus.BAD_REQUEST)
 public class FirestationInvalidException extends RuntimeException {
-    public FirestationInvalidException(){
+    /*public FirestationInvalidException(){
         super();
     }
     public FirestationInvalidException(String message) {
@@ -13,5 +13,5 @@ public class FirestationInvalidException extends RuntimeException {
     }
     public FirestationInvalidException(String message, Throwable cause){
         super(message,cause);
-    }
+    }*/
 }

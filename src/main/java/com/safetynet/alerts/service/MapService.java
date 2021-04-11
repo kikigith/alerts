@@ -12,10 +12,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+//@Service
 public class MapService {
 
-    @Autowired
+    /*@Autowired
     private DataRepository dataRepository;
 
     @Autowired
@@ -41,7 +41,7 @@ public class MapService {
         }
 
         return personInfo;
-    }
+    }*/
 
 
 

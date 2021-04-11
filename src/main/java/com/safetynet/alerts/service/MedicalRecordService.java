@@ -41,9 +41,14 @@ public class MedicalRecordService extends AbstractService {
 
 	public MedicalRecord updateMedicalRecord(MedicalRecord medicalRecord)
 			throws JsonParseException, JsonMappingException, IOException {
-		if (medicalRecord.getFirstName().isEmpty() || medicalRecord.getLastName().isEmpty()) {
-			throw new MedicalRecordInvalidException("Le champ nom/prénom ne peut être vide");
+		if (medicalRecord == null) throw new MedicalRecordInvalidException("Medical record must not be null");
+		if (medicalRecord.getLastName() == null || medicalRecord.getFirstName().isEmpty()) {
+			throw new MedicalRecordInvalidException("Le champ prenom ne peut être vide");
 		}
+		if (medicalRecord.getFirstName() == null || medicalRecord.getLastName().isEmpty()) {
+			throw new MedicalRecordInvalidException("Le champ nom ne peut être vide");
+		}
+
 		logger.info(
 				"Updating  person nom: '" + medicalRecord.getFirstName() + "' prénom: '" + medicalRecord.getLastName());
 		MedicalRecord updatedMedicalRecord = dataRepository.saveMedicalRecord(medicalRecord);
@@ -54,12 +59,12 @@ public class MedicalRecordService extends AbstractService {
 	public MedicalRecord findMedicalRecord(String firstname, String lastname) {
 		MedicalRecord mRecord = null;
 		try {
-			mRecord = dataRepository.findMedicalRecordByLastNameAndFirstName(lastname, firstname).get(0);
-		} catch (MedicalRecordNotFoundException mrie) {
-			// TODO: handle exception
+			List<MedicalRecord> medicalRecords = dataRepository.findMedicalRecordByLastNameAndFirstName(lastname, firstname);
+			if(medicalRecords.isEmpty())
+				throw new MedicalRecordNotFoundException("medical ");
+			mRecord = medicalRecords.get(0);
 		} catch (JsonMappingException jme) {
-
-		} catch (Exception e) {
+			logger.error(jme.getMessage());
 		}
 
 		return mRecord;
@@ -97,7 +102,7 @@ public class MedicalRecordService extends AbstractService {
 				personInfos.add(personInfo);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error(e.getMessage());
 			}
 		});
 
@@ -112,12 +117,12 @@ public class MedicalRecordService extends AbstractService {
 					Utils.calculateAge(mr.getBirthdate()), pers.getEmail(), pers.getPhone(), pers.getAddress(),
 					mr.getAllergies(), mr.getMedications());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 
 		return personInfo;
 	}
+
 	/**
 	 * retrieveMedicalRecordFromPersons - Retrieve medicalRecords for a list of
 	 * persons
@@ -125,7 +130,7 @@ public class MedicalRecordService extends AbstractService {
 	 * @param persons
 	 * @return
 	 */
-	public List<MedicalRecord> retrieveMedicalRecordFromPersons(List<Person> persons) {
+	/*public List<MedicalRecord> retrieveMedicalRecordFromPersons(List<Person> persons) {
 		List<MedicalRecord> mrs = new ArrayList<>();
 
 		persons.forEach(pers -> {
@@ -133,7 +138,7 @@ public class MedicalRecordService extends AbstractService {
 		});
 
 		return mrs;
-	}
+	}*/
 
 	/**
 	 * getMedicalRecordForAPerson - Retrieve a person's medical record
@@ -156,10 +161,10 @@ public class MedicalRecordService extends AbstractService {
 	 *
 	 * @return
 	 */
-	public PersonsCoveredByStation convertMedicalRecordToPersonsCovered(MedicalRecord mr){
+	//public PersonsCoveredByStation convertMedicalRecordToPersonsCovered(MedicalRecord mr){
 
-		return null;
-	}
+	//	return null;
+	//}
 
 
 

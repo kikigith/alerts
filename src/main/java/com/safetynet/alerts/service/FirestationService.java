@@ -10,6 +10,7 @@ import com.safetynet.alerts.exception.FirestationNotFoundException;
 import com.safetynet.alerts.model.MedicalRecord;
 import com.safetynet.alerts.model.dto.ChildrenCoveredDTO;
 import com.safetynet.alerts.model.dto.PersonsCoveredByStation;
+import com.safetynet.alerts.model.dto.StationCoverageDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class FirestationService extends AbstractService {
 	@Autowired
 	private MedicalRecordService medicalRecordService;
 
+
 	public List<Firestation> findAll() throws Exception {
 		return jsonDataReader().getFirestations();
 	}
@@ -45,9 +47,9 @@ public class FirestationService extends AbstractService {
 	public Firestation updateFirestation(Firestation firestation)
 			throws JsonParseException, JsonMappingException, IOException {
 
-		if(firestation.getStation()<=0 || (firestation.getStation()%1==0)){
-			throw new FirestationInvalidException("Vous devez préciser un ID pour la station à mettre à jour");
-		}
+		//if(!Integer.class.isInstance(firestation.getStation())){
+		//	throw new FirestationInvalidException("Vous devez préciser un ID entier pour la station à mettre à jour");
+		//}
 		if(findFirestation(firestation.getStation())==null){
 			throw new FirestationNotFoundException("La station d'ID "+ firestation.getStation()+" n'existe pas");
 		}
@@ -110,22 +112,6 @@ public class FirestationService extends AbstractService {
 			personInfos.add(personInfoDTO);
 		});
 
-
-
-
-		/*List<MedicalRecord> mrs=new ArrayList<>();
-
-		personsAtAddress.forEach(pers->{
-			mrs.add(medicalRecordService.getMedicalRecordForAPerson(pers));
-		});
-		List<PersonInfoDTO> personInfos = medicalRecordService.convertMedicalRecordsToPersonInfos(mrs);
-		for (PersonInfoDTO pInfo:personInfos) {
-			if(pInfo.isChild()){
-				childCount.getAndIncrement();
-			}else{
-                adultCount.getAndIncrement();
-			}
-		}*/
 		personsCoveredByStation.setNbEnfants(childCount.get());
 		personsCoveredByStation.setNbAdult(adultCount.get());
 		personsCoveredByStation.setPersonsCovered(personInfos);
@@ -166,6 +152,8 @@ public class FirestationService extends AbstractService {
 	 * @param address
 	 * @return
 	 * @throws JsonMappingException
+	 *
+	 * endpoint: http://localhost:8080/fire/address=address
 	 */
 	public PersonsCoveredByStation getStationAndPersonsCoveredAtAddress(String address) throws JsonMappingException{
 		PersonsCoveredByStation personsCoveredByStation=new PersonsCoveredByStation();
@@ -190,4 +178,31 @@ public class FirestationService extends AbstractService {
 	public Firestation getStationCoveringAddress(String address) throws JsonMappingException {
 		return dataRepository.findFirestationByAddress(address);
 	}
+
+	public StationCoverageDTO generateStationCoverage(int stationNumber) throws JsonMappingException{
+		StationCoverageDTO stationCoverage = new StationCoverageDTO();
+
+		Firestation firestation=dataRepository.findFirestation(stationNumber);
+		stationCoverage.setAddress(firestation.getAddress());
+		List<Person> personsCovered=dataRepository.getPersonsAtAddress(firestation.getAddress());
+		stationCoverage.setPersonsCovered(personsCovered);
+
+		return stationCoverage;
+	}
+
+	public List<StationCoverageDTO> getStationsCoverage(List<Integer> stations) throws JsonMappingException {
+		List<StationCoverageDTO> stationsCoverage=new ArrayList<>();
+		stations.forEach(station->
+		{
+			try {
+				stationsCoverage.add(generateStationCoverage(station));
+			} catch (JsonMappingException e) {
+				logger.error(e.getMessage());
+			}
+		});
+
+		return stationsCoverage;
+	}
+
+
 }

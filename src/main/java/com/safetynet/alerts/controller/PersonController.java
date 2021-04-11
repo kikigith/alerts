@@ -185,8 +185,9 @@ public class PersonController {
 															 @RequestParam("firstname") String firstname) throws Exception {
 
 		logger.info("Request Delete person firstname {}, lastname {}", firstname, lastname);
-		List<PersonInfoDTO> searchResult = personService.getPersonInfos(lastname, firstname);
-		return new ResponseEntity<List<PersonInfoDTO>>(searchResult, HttpStatus.OK);
+
+			List<PersonInfoDTO> searchResult = personService.getPersonInfos(lastname, firstname);
+			return new ResponseEntity<List<PersonInfoDTO>>(searchResult, HttpStatus.OK);
 	}
 
 	/**

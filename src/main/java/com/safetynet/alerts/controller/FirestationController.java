@@ -7,6 +7,7 @@ import java.util.List;
 import com.safetynet.alerts.exception.FirestationNotFoundException;
 import com.safetynet.alerts.model.dto.ChildrenCoveredDTO;
 import com.safetynet.alerts.model.dto.PersonsCoveredByStation;
+import com.safetynet.alerts.model.dto.StationCoverageDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +72,7 @@ public class FirestationController {
 				frs.setAddress(firestation.getAddress());
 			}
 			Integer station = frs.getStation();
-			if (station != null) {
+			if (station != null ) {
 				frs.setStation(firestation.getStation());
 			}
 
@@ -103,7 +104,7 @@ public class FirestationController {
 	 * @throws JsonMappingException
 	 */
 	@GetMapping("/phoneAlert")
-	public ResponseEntity< List<String>> getPhoneAlert(@RequestParam("firestation") Integer station_number)
+	public ResponseEntity<List<String>> getPhoneAlert(@RequestParam("firestation") Integer station_number)
 			throws JsonMappingException {
 		logger.info("Request: retrieve phone number for residents covered by station {} ", station_number);
 		List<String> residents = firestationService.getResidentPhone(station_number);
@@ -159,5 +160,20 @@ public class FirestationController {
 		PersonsCoveredByStation personsCovered = firestationService.getStationAndPersonsCoveredAtAddress(address);
 		logger.info("Response : persons covered at address: {}", personsCovered);
 		return new ResponseEntity<PersonsCoveredByStation>(personsCovered, HttpStatus.OK);
+	}
+
+
+	/**
+	 * retrieveStationsCoverage - Display the coverage of a list of stations
+	 * @param stations
+	 * @return
+	 * @throws JsonMappingException
+	 */
+	@GetMapping("/flood/stations")
+	public ResponseEntity<List<StationCoverageDTO>> retrieveStationsCoverage(@RequestParam("stations") List<Integer> stations) throws JsonMappingException{
+		logger.info("Request: retrieve stations coverage: {}", stations);
+		List<StationCoverageDTO> stationsCoverage=firestationService.getStationsCoverage(stations);
+		logger.info("Response : stations coverage: {}", stationsCoverage);
+		return new ResponseEntity<List<StationCoverageDTO>>(stationsCoverage, HttpStatus.OK);
 	}
 }

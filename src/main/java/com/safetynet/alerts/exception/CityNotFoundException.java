@@ -4,9 +4,9 @@ package com.safetynet.alerts.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.NOT_FOUND)
+//@ResponseStatus(HttpStatus.NOT_FOUND)
 public class CityNotFoundException extends RuntimeException {
-    public CityNotFoundException(){
+   /* public CityNotFoundException(){
         super();
     }
     public CityNotFoundException(String message){
@@ -15,5 +15,5 @@ public class CityNotFoundException extends RuntimeException {
 
     public CityNotFoundException(String message, Throwable cause){
         super(message,cause);
-    }
+    }*/
 }

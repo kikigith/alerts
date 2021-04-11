@@ -99,9 +99,4 @@ public class MedicalRecordControllerTest extends AbstractControllerTest {
 		assertEquals(202, status);
 	}
 
-	@Test
-	public void testDisplayChildAlert() throws Exception {
-
-	}
-
 }

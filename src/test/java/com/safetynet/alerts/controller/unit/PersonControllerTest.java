@@ -17,10 +17,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
+import com.safetynet.alerts.exception.PersonInvalidException;
+import com.safetynet.alerts.repository.DataRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -43,6 +47,20 @@ public class PersonControllerTest extends AbstractControllerTest {
 
 	@MockBean
 	private PersonService personService;
+
+	@Mock
+	private DataRepository dataRepository;
+
+	private List<String> emails;
+	private String city;
+
+	@BeforeEach
+	void initTest(){
+		city="Parakou";
+		emails=new ArrayList<>();
+		emails.add("vidossou@gmail.com");
+		emails.add("bkarl@outlook.com");
+	}
 
 	@Test
 	@Order(1)
@@ -151,6 +169,18 @@ public class PersonControllerTest extends AbstractControllerTest {
 
 	@Test
 	@Order(8)
+	public void when_firstname_or_lastname_is_empty_delete_should_raise_exception() throws Exception{
+		String uri = "/person?lastname=mike&firstname=";
+		Person person = new Person("mike", "karl");
+
+		when(personService.findPerson("mike", "")).thenReturn(null);
+
+		mockMvc.perform(delete(uri).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isBadRequest())
+				.andExpect(result -> assertTrue(result.getResolvedException() instanceof PersonInvalidException));
+	}
+
+	@Test
+	@Order(9)
 	public void testListPersonInfos() throws Exception {
 		List<PersonInfoDTO> personInfo = new ArrayList<>();
 		PersonInfoDTO pi1 = new PersonInfoDTO();
@@ -172,5 +202,18 @@ public class PersonControllerTest extends AbstractControllerTest {
 				.andDo(MockMvcResultHandlers.print());
 
 	}
+
+	@Test
+	@Order(10)
+	public void when_Given_An_City_should_return_Residents_emails() throws Exception{
+		String uri="/communityEmail?city="+city;
+		doReturn(emails).when(personService).getCommunityEmail(city);
+		int status = mockMvc.perform(get(uri).contentType(MediaType.APPLICATION_JSON_VALUE))
+				.andExpect(jsonPath("$[0]",is("vidossou@gmail.com")))
+				.andReturn().getResponse().getStatus();
+		assertEquals(200, status);
+	}
+
+
 
 }
