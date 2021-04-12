@@ -45,6 +45,10 @@ public class PersonServiceTest {
 		person = new Person();
 		person.setFirstName("mike");
 		person.setLastName("fiver");
+		person.setAddress("Rue 54 parakou");
+		person.setPhone("928 8484 88");
+		person.setCity("Parakou");
+		person.setZip("0000");
 
 		mr = new ArrayList<>();
 		MedicalRecord mr1 = new MedicalRecord();
@@ -74,6 +78,8 @@ public class PersonServiceTest {
 		pers1.setCity("cotonou");
 		pers1.setEmail("fmike@gmail.com");
 		pers1.setAddress("23 rue dubond");
+		pers1.setZip("0000");
+		pers1.setPhone("90909009");
 		persons.add(pers1);
 		pers2 = new Person();
 		pers2.setFirstName("Julie");
@@ -81,6 +87,8 @@ public class PersonServiceTest {
 		pers2.setCity("cotonou");
 		pers2.setEmail("ojulie@outlook.com");
 		pers2.setAddress("45 avenue 2");
+		pers2.setZip("0000");
+		pers2.setPhone("90909009");
 		persons.add(pers2);
 		pers3 = new Person();
 		pers3.setFirstName("Benon");
@@ -88,6 +96,8 @@ public class PersonServiceTest {
 		pers3.setCity("Allada");
 		pers3.setEmail("fbenon@yahoo.fr");
 		pers3.setAddress("45 avenue 2");
+		pers3.setZip("0000");
+		pers3.setPhone("90909009");
 		persons.add(pers3);
 
 
@@ -173,7 +183,7 @@ public class PersonServiceTest {
 
 		List<Person> personsFound=personService.findPersonByAddress("45 avenue 2");
 		assertThat(personsFound).hasSize(2);
-		//assertThat(personsFound.contains(pers3.getEmail());
+		assertThat(personsFound.contains(pers3));
 	}
 
 }

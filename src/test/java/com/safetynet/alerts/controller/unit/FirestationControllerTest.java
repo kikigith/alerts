@@ -32,8 +32,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.safetynet.alerts.controller.FirestationController;
 import com.safetynet.alerts.model.Firestation;
 import com.safetynet.alerts.service.FirestationService;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @WebMvcTest(controllers = FirestationController.class)
@@ -215,13 +218,17 @@ public class FirestationControllerTest extends AbstractControllerTest {
 
 	@Test
 	public void given_A_list_of_stations_should_return_Covered_homes() throws Exception{
-		String uri="/flood/stations?stations=1";
-		List<Integer> stations=new ArrayList<>();
+		String uri="/flood/stations?stations";
+		List<Integer> stations = new ArrayList<>();
 		stations.add(1);
 		stations.add(2);
 
+		List<String> stationIds = Arrays.asList("1", "2");
+		MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
+		parameters.addAll("stations", stationIds);
+
 		doReturn(stationsCoverage).when(firestationService.getStationsCoverage(stations));
-		int status = mockMvc.perform(get(uri).contentType(MediaType.APPLICATION_JSON_VALUE))
+		int status = mockMvc.perform(get(uri).params(parameters).contentType(MediaType.APPLICATION_JSON_VALUE))
 				.andDo(print())
 				.andExpect(jsonPath("$[0].personsCovered[0].nom",is(person1.getFirstName())))
 				.andReturn().getResponse().getStatus();
