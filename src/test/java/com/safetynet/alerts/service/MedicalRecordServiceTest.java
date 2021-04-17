@@ -68,8 +68,21 @@ public class MedicalRecordServiceTest {
 		MedicalRecord medicalRecord = new MedicalRecord();
 		medicalRecord.setFirstName("Bill");
 		medicalRecord.setLastName("Gink");
+		List<String> allergies=new ArrayList<>();
+		allergies.add("phenol");
+		medicalRecord.setAllergies(allergies);
+		List<String> medications=new ArrayList<>();
+		medications.add("cipro");
+		medicalRecord.setMedications(medications);
+		Calendar calendar = new GregorianCalendar(2000, 11, 03);
+		medicalRecord.setBirthdate(calendar.getTime());
 
-		medicalRecordService.updateMedicalRecord(medicalRecord);
+        //when(dataRepository.findMedicalRecordByLastNameAndFirstName("Gink","Bill")).thenReturn(mrs);
+
+		when(dataRepository.saveMedicalRecord(medicalRecord)).thenReturn(medicalRecord);
+		MedicalRecord mrec = medicalRecordService.updateMedicalRecord(medicalRecord);
+
+		assertThat(mrec).isNotNull();
 
 		verify(dataRepository).saveMedicalRecord(any());
 
@@ -103,7 +116,7 @@ public class MedicalRecordServiceTest {
 	void when_lastname_empty_or_is_not_set_update_should_raise_exception() throws Exception{
 		MedicalRecord mRecord = new MedicalRecord();
 		mRecord.setFirstName("Test");
-		mRecord.setLastName("");
+		mRecord.setLastName(null);
 		Assertions.assertThrows(MedicalRecordInvalidException.class, ()->{
 			medicalRecordService.updateMedicalRecord(mRecord);
 		});

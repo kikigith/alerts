@@ -63,6 +63,7 @@ public class MedicalRecordController {
 		logger.info("Request = @RequestBody = {}", medicalRecord.toString());
 		try {
 			MedicalRecord mr = medicalRecordService.findMedicalRecord(firstname, lastname);
+
 			String fname = medicalRecord.getFirstName();
 			if (fname != null) {
 				mr.setFirstName(fname);

@@ -45,10 +45,8 @@ public class DataRepository {
 		try {
 			aData = objectMapper.readValue(jsonFile.getFile(), AlertsData.class);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return aData;
 	}
 
@@ -62,7 +60,6 @@ public class DataRepository {
 		try {
 			return jsonDataReader().getPersons();
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -72,7 +69,7 @@ public class DataRepository {
 	 * findAllFirestation - Deserialize all firestation objects from the json data
 	 * repository into a List
 	 * 
-	 * @return
+	 * @return - ...
 	 */
 	public List<Firestation> findAllFirestation() {
 		try {

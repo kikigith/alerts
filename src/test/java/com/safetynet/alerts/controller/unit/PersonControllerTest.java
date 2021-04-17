@@ -110,8 +110,31 @@ public class PersonControllerTest extends AbstractControllerTest {
 		assertEquals(200, status);
 	}
 
+
 	@Test
 	@Order(4)
+	public void given_lastname_and_firstname_should_return_a_Person() throws Exception {
+		String uri = "/person?firstname=LORD&lastname=Franklin";
+		Person person = new Person();
+		person.setFirstName("LORD");
+		person.setLastName("Franklin");
+		person.setEmail("flord@test.com");
+		person.setPhone("0203003");
+		person.setZip("8484848");
+		person.setAddress("43 Bruyère");
+		person.setCity("Albatros");
+
+		String personJson = mapToJson(person);
+		when(personService.findPerson("LORD", "Franklin")).thenReturn(person);
+		int status = mockMvc.perform(get(uri).contentType(MediaType.APPLICATION_JSON_VALUE).content(personJson))
+				.andDo(MockMvcResultHandlers.print())
+				.andExpect(jsonPath("$.firstName",is("LORD")))
+				.andReturn().getResponse().getStatus();
+		assertEquals(200, status);
+	}
+
+	@Test
+	@Order(5)
 	public void testDeletePerson() throws Exception {
 		String uri = "/person?lastname=mike&firstname=karl";
 		Person person = new Person();

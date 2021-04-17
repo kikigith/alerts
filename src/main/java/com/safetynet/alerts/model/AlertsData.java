@@ -8,12 +8,7 @@ public class AlertsData {
 	private List<Firestation> firestations;
 	private List<MedicalRecord> medicalrecords;
 
-	public AlertsData() {
-
-	}
-
 	public AlertsData(List<Person> persons, List<Firestation> firestations, List<MedicalRecord> medicalrecords) {
-		super();
 		this.persons = persons;
 		this.firestations = firestations;
 		this.medicalrecords = medicalrecords;

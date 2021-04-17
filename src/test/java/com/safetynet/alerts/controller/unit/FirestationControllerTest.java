@@ -32,6 +32,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.safetynet.alerts.controller.FirestationController;
 import com.safetynet.alerts.model.Firestation;
 import com.safetynet.alerts.service.FirestationService;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
@@ -107,9 +108,21 @@ public class FirestationControllerTest extends AbstractControllerTest {
 		stationCoverage1 = new StationCoverageDTO();
 		stationCoverage1.setAddress("24 rue Toho");
 		person1 = new Person();
+		person1.setLastName("Mafon");
 		person1.setFirstName("Alice");
+		person1.setCity("Parakou");
+		person1.setZip("0000");
+		person1.setAddress("03 rue guera");
+		person1.setEmail("amafon@pkou.net");
+		person1.setPhone("445 848 2727");
 		person2 = new Person();
+		person2.setLastName("Koukou");
 		person2.setFirstName("Dossa");
+		person2.setCity("tchaurou");
+		person2.setZip("0000");
+		person2.setAddress("57 rue boni");
+		person2.setEmail("dkoukou@cmn.net");
+		person2.setPhone("725 848 2727");
 		personsCovered1  = new ArrayList<>();
 		personsCovered1.add(person1);
 		personsCovered1.add(person2);
@@ -118,9 +131,21 @@ public class FirestationControllerTest extends AbstractControllerTest {
 		stationCoverage2 = new StationCoverageDTO();
 		stationCoverage2.setAddress("98 station Balneaire");
 		person3 = new Person();
+		person3.setLastName("Viho");
 		person3.setFirstName("Victoire");
+		person3.setCity("Savè");
+		person3.setZip("0000");
+		person3.setAddress("55 rue beni");
+		person3.setEmail("vviho@cmn.net");
+		person3.setPhone("445 848 2727");
 		person4 = new Person();
+		person4.setLastName("Fifa");
 		person4.setFirstName("Dossa");
+		person4.setCity("Allada");
+		person4.setZip("0000");
+		person4.setAddress("33 rue louverture");
+		person4.setEmail("fdossa@tec.net");
+		person4.setPhone("445 5858388");
 		personsCovered2 = new ArrayList<>();
 		personsCovered2.add(person3);
 		personsCovered2.add(person4);
@@ -218,19 +243,23 @@ public class FirestationControllerTest extends AbstractControllerTest {
 
 	@Test
 	public void given_A_list_of_stations_should_return_Covered_homes() throws Exception{
-		String uri="/flood/stations?stations";
+		String uri="/flood/stations";
 		List<Integer> stations = new ArrayList<>();
 		stations.add(1);
 		stations.add(2);
 
-		List<String> stationIds = Arrays.asList("1", "2");
+		/*List<String> stationIds = Arrays.asList("1", "2");
 		MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
-		parameters.addAll("stations", stationIds);
+		parameters.addAll("stations", stationIds);*/
+		String stationIds="1,2";
 
-		doReturn(stationsCoverage).when(firestationService.getStationsCoverage(stations));
-		int status = mockMvc.perform(get(uri).params(parameters).contentType(MediaType.APPLICATION_JSON_VALUE))
+		//doReturn(stationsCoverage).when(firestationService.getStationsCoverage(stations));
+		when(firestationService.getStationsCoverage(stations)).thenReturn(stationsCoverage);
+
+		int status = mockMvc.perform(get(uri).param("stations", stationIds).contentType(MediaType.APPLICATION_JSON_VALUE))
 				.andDo(print())
-				.andExpect(jsonPath("$[0].personsCovered[0].nom",is(person1.getFirstName())))
+				.andExpect(jsonPath("$[0].personsCovered[0].firstName",is(person1.getFirstName())))
+				.andDo(MockMvcResultHandlers.print())
 				.andReturn().getResponse().getStatus();
 		assertEquals(200,status);
 	}
